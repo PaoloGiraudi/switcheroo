@@ -1,0 +1,27 @@
+{
+	"id": "converter-app",
+	"name": "Converter",
+	"short_name": "Converter",
+	"description": "Convert your life to easy",
+	"version": "0.0.1",
+	"start_url": "/",
+	"scope": "/",
+	"display": "standalone",
+	"orientation": "any",
+	"theme_color": "#00d1b2",
+	"background_color": "#ffffff",
+	"dir": "ltr",
+	"lang": "en",
+	"icons": [
+		{
+			"src": "/icons/icon-256.png",
+			"sizes": "256x256",
+			"type": "image/png"
+		},
+		{
+			"src": "/icons/icon-512.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	]
+}
