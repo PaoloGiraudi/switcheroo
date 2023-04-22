@@ -15,7 +15,7 @@ export const definitions: Record<Conversion, Def> = {
 		setFromRight: (value: string) => +(+value / 3.28084).toFixed(2)
 	},
 	CentimitersToInches: {
-		left: 'Centimiters',
+		left: 'Centimeters',
 		right: 'Inches',
 		setFromLeft: (value: string) => +(+value / 2.54).toFixed(2),
 		setFromRight: (value: string) => +(+value * 2.54).toFixed(2)
