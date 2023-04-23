@@ -1,4 +1,6 @@
 <script lang="ts">
+	import '../styles/reset.css';
+	import '../styles/global.css';
 	import { theme } from '$lib/stores';
 	import Nav from '../components/nav.svelte';
 </script>

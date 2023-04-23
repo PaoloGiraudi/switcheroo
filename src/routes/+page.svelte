@@ -1,6 +1,4 @@
 <script lang="ts">
-	import '../styles/reset.css';
-	import '../styles/global.css';
 	import Field from '../components/field.svelte';
 	import { definitions } from '../lib/definitions';
 	import { conversions } from '../lib/conversions';
