@@ -21,7 +21,6 @@
 		height: 3.5rem;
 		border: none;
 		font-size: 2.5rem;
-		/* background: linear-gradient(var(--bg-primary) 0 10%, var(--bg-secondary)); */
 		background-color: var(--bg-secondary);
 		padding: 0 8px;
 		border-bottom: 2px solid transparent;
@@ -33,7 +32,7 @@
 	}
 	label {
 		font-weight: 400;
-		font-size: 0.75rem;
-		padding: 0 8px;
+		font-size: 1rem;
+		padding: 2px 8px;
 	}
 </style>
