@@ -1,6 +1,8 @@
 export enum Conversion {
 	MetersToFeet = 'MetersToFeet',
-	CentimitersToInches = 'CentimitersToInches',
+	CentimetersToInches = 'CentimetersToInches',
+	KilogramsToPounds = 'KilogramsToPounds',
+	LitersToGallons = 'LitersToGallons',
 	CelsiusToFahrenheit = 'CelsiusToFahrenheit'
 }
 

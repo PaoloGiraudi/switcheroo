@@ -1,9 +1,13 @@
 <script lang="ts">
+	import '../styles/reset.css';
+	import '../styles/global.css';
 	import { theme } from '$lib/stores';
 	import Nav from '../components/nav.svelte';
 </script>
 
 <svelte:head>
+	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f3f3f3" />
+	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#101010" />
 	<meta name="color-scheme" content={$theme == 'system' ? 'light dark' : $theme} />
 	<link rel="stylesheet" href={`/theme/${$theme}.css`} />
 </svelte:head>

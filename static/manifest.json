@@ -7,9 +7,9 @@
 	"start_url": "/",
 	"scope": "/",
 	"display": "standalone",
-	"orientation": "any",
-	"theme_color": "#00d1b2",
-	"background_color": "#ffffff",
+	"orientation": "portrait",
+	"theme_color": "#b80c09",
+	"background_color": "#b80c09",
 	"dir": "ltr",
 	"lang": "en",
 	"icons": [
@@ -22,6 +22,14 @@
 			"src": "/icons/icon-512.png",
 			"sizes": "512x512",
 			"type": "image/png"
+		}
+	],
+	"shortcuts": [
+		{
+			"name": "Settings",
+			"short_name": "Settings",
+			"description": "Go to settings",
+			"url": "/settings"
 		}
 	]
 }
