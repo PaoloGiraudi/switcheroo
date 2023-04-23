@@ -10,30 +10,30 @@
 
 <style>
 	div {
+		padding-top: 8px;
 		width: 50%;
 		display: flex;
 		flex-direction: column;
-		position: relative;
+		background-color: var(--bg-secondary);
 	}
 
 	input {
-		font-family: 'Rubik', sans-serif;
-		height: 4rem;
-		border: 2px solid gray;
-		border-left: none;
-		border-right: none;
+		height: 3.5rem;
+		border: none;
 		font-size: 2.5rem;
+		/* background: linear-gradient(var(--bg-primary) 0 10%, var(--bg-secondary)); */
+		background-color: var(--bg-secondary);
+		padding: 0 8px;
+		border-bottom: 2px solid transparent;
+	}
+	input:focus,
+	input:focus-visible {
+		border-bottom: 2px inset var(--accent);
+		outline-style: none;
 	}
 	label {
 		font-weight: 400;
-		font-family: 'Rubik', sans-serif;
-		font-size: 1rem;
-		line-height: 1rem;
-		z-index: 1;
-		top: -0.5rem;
-		left: 0.75rem;
-		padding: 0 5px;
-		background-color: white;
-		position: absolute;
+		font-size: 0.75rem;
+		padding: 0 8px;
 	}
 </style>
