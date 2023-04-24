@@ -30,5 +30,9 @@
 		"vite": "^4.2.0",
 		"vitest": "^0.25.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@fontsource/rubik": "^4.5.14",
+		"open-props": "^1.5.8"
+	}
 }

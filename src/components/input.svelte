@@ -10,29 +10,30 @@
 
 <style>
 	div {
-		padding-block-start: 0.5rem;
+		padding-block-start: var(--size-2);
 		width: 50%;
 		display: flex;
 		flex-direction: column;
-		background-color: var(--bg-secondary);
+		background-color: var(--surface);
 	}
 
 	input {
-		height: 3.75rem;
-		border: none;
-		font-size: 2.5rem;
-		background-color: var(--bg-secondary);
-		padding-inline-start: 0.625rem;
-		border-bottom: 2px solid transparent;
+		caret-color: var(--text-2);
+		height: var(--size-9);
+		font-size: var(--font-size-6);
+		padding-inline-start: var(--size-2);
+		background-color: var(--surface);
+		border-bottom: var(--border-size-2) solid transparent;
+		border-radius: 0;
 	}
 	input:focus,
 	input:focus-visible {
-		border-bottom: 2px solid var(--accent);
+		border-bottom-color: var(--accent);
 		outline-style: none;
 	}
 	label {
-		font-weight: 400;
-		font-size: 1rem;
-		padding-inline-start: 0.625rem;
+		font-weight: var(--font-weight-4);
+		font-size: var(--font-size-1);
+		padding-inline-start: var(--size-2);
 	}
 </style>
