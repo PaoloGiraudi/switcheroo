@@ -1,0 +1,83 @@
+@import '@fontsource/rubik';
+
+html {
+	/* font */
+	--font-sans: 'Rubik', sans-serif;
+
+	/* dark */
+	--accent-dark: var(--red-9);
+	--text-1-dark: var(--gray-3);
+	--text-2-dark: var(--gray-5);
+	--surface-dark: var(--gray-10);
+	--background-dark: var(--gray-12);
+
+	/* light */
+	--accent-light: var(--red-10);
+	--text-1-light: var(--gray-8);
+	--text-2-light: var(--gray-7);
+	--surface-light: var(--gray-1);
+	--background-light: var(--gray-2);
+}
+
+:root {
+	color-scheme: dark;
+
+	--accent: var(--accent-dark);
+	--text-1: var(--text-1-dark);
+	--text-2: var(--text-2-dark);
+	--surface: var(--surface-dark);
+	--background: var(--background-dark);
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		color-scheme: light;
+
+		--accent: var(--accent-light);
+		--text-1: var(--text-1-light);
+		--text-2: var(--text-2-light);
+		--surface: var(--surface-light);
+		--background: var(--background-light);
+	}
+}
+
+[color-scheme='dark'] {
+	color-scheme: dark;
+
+	--accent: var(--accent-dark);
+	--text-1: var(--text-1-dark);
+	--text-2: var(--text-2-dark);
+	--surface: var(--surface-dark);
+	--background: var(--background-dark);
+}
+
+[color-scheme='light'] {
+	color-scheme: light;
+
+    --accent: var(--accent-light);
+    --text-1: var(--text-1-light);
+    --text-2: var(--text-2-light);
+    --surface: var(--surface-light);
+    --background: var(--background-light);
+
+}
+
+body,html {
+    height: 100%;
+}
+
+html {
+
+	color: var(--text-1);
+	accent-color: var(--accent);
+	background-color: var(--background);
+	background-attachment: fixed;
+}
+
+button {
+	--_highlight-size: 0;
+	--_highlight-light: none;
+	--_ink-shadow-light: none;
+	--_icon-size: unset;
+	border-color:  transparent;
+}

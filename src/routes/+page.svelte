@@ -14,6 +14,6 @@
 	div {
 		display: flex;
 		flex-direction: column;
-		gap: 0.5rem;
+		gap: var(--size-2);
 	}
 </style>

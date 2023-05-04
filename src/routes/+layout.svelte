@@ -1,30 +1,49 @@
 <script lang="ts">
-	import '../styles/reset.css';
-	import '../styles/global.css';
-	import { theme } from '$lib/stores';
-	import Nav from '../components/nav.svelte';
+	import 'open-props/style';
+	import 'open-props/normalize';
+	import 'open-props/buttons';
+	import 'open-props/colors-hsl';
+	import '../app.css';
+	import Settings from '../components/settings.svelte';
+	import Close from '../components/icons/close.svelte';
+	import SettingsIcon from '../components/icons/settings.svelte';
+	let open = false;
+
+	const handleOpen = () => (open = !open);
 </script>
 
-<svelte:head>
-	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f3f3f3" />
-	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#101010" />
-	<meta name="color-scheme" content={$theme == 'system' ? 'light dark' : $theme} />
-	<link rel="stylesheet" href={`/theme/${$theme}.css`} />
-</svelte:head>
-
-<main>
-	<slot />
-	<Nav />
-</main>
+<div class="layout">
+	<main>
+		<slot />
+	</main>
+	<Settings bind:open />
+	<button on:click={handleOpen}>
+		<svelte:component this={open ? Close : SettingsIcon} />
+	</button>
+</div>
 
 <style>
-	main {
+	.layout {
+		margin-inline: auto;
+		max-inline-size: var(--size-md);
 		overflow: hidden;
-		margin: 0.5rem;
+		height: 100%;
+		position: relative;
+	}
+	main {
+		margin: var(--size-2);
 		display: flex;
 		flex-direction: column;
-		height: calc(100vh - 1rem);
-		background-color: var(--bg-primary);
-		position: relative;
+	}
+	button {
+		color: var(--gray-3);
+		display: grid;
+		place-items: center;
+		height: var(--size-9);
+		width: var(--size-9);
+		position: absolute;
+		background: var(--accent);
+		bottom: var(--size-3);
+		right: var(--size-3);
 	}
 </style>

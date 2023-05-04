@@ -1,8 +1,0 @@
-html,
-body {
-  height: 100vh;
-  overflow: hidden;
-  background-color: var(--bg-primary);
-  font-family: 'Rubik', sans-serif;
-  color:var(--text)
-}

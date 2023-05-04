@@ -28,6 +28,8 @@
 
 <style>
 	div {
+		overflow: hidden;
+		border-radius: var(--radius-2);
 		display: flex;
 	}
 </style>
