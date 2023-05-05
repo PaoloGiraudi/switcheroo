@@ -1,16 +1,13 @@
 <script lang="ts">
 	import 'open-props/style';
 	import 'open-props/normalize';
-	import 'open-props/buttons';
 	import 'open-props/colors-hsl';
 	import '../app.css';
 	import Settings from '../components/settings.svelte';
 	import Close from '../components/icons/close.svelte';
 	import SettingsIcon from '../components/icons/settings.svelte';
 	import Drawer from '../components/drawer.svelte';
-	let open = false;
-
-	const handleOpen = () => (open = !open);
+	import { drawer } from '$lib/drawer';
 </script>
 
 <svelte:head>
@@ -22,11 +19,11 @@
 	<main>
 		<slot />
 	</main>
-	<Drawer bind:open>
+	<Drawer>
 		<Settings />
 	</Drawer>
-	<button on:click={handleOpen}>
-		<svelte:component this={open ? Close : SettingsIcon} />
+	<button on:click={() => drawer.set(!$drawer)}>
+		<svelte:component this={$drawer ? Close : SettingsIcon} />
 	</button>
 </div>
 
@@ -44,13 +41,14 @@
 		flex-direction: column;
 	}
 	button {
+		border-radius: var(--radius-2);
 		color: var(--gray-3);
 		display: grid;
 		place-items: center;
-		height: var(--size-9);
-		width: var(--size-9);
+		height: var(--size-fluid-5);
+		aspect-ratio: var(--ratio-square);
 		position: absolute;
-		background: var(--accent);
+		background: var(--brand);
 		bottom: var(--size-3);
 		right: var(--size-3);
 	}

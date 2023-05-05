@@ -1,9 +1,9 @@
 {
-	"id": "converter-app",
+	"id": "0.1.1",
 	"name": "Converter",
 	"short_name": "Converter",
 	"description": "Convert your life to easy",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"start_url": "/",
 	"scope": "/",
 	"display": "standalone",

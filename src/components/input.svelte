@@ -14,26 +14,29 @@
 		width: 50%;
 		display: flex;
 		flex-direction: column;
-		background-color: var(--surface);
+		background-color: var(--surface-1);
 	}
 
 	input {
 		caret-color: var(--text-2);
-		height: var(--size-9);
-		font-size: var(--font-size-6);
-		padding-inline-start: var(--size-2);
-		background-color: var(--surface);
+		height: var(--size-fluid-5);
+		font-size: var(--font-size-fluid-3);
+		padding-inline-start: var(--size-fluid-1);
+		background-color: var(--surface-1);
 		border-bottom: var(--border-size-2) solid transparent;
 		border-radius: 0;
 	}
 	input:focus,
 	input:focus-visible {
-		border-bottom-color: var(--accent);
+		border-bottom-color: var(--brand);
 		outline-style: none;
 	}
 	label {
 		font-weight: var(--font-weight-4);
-		font-size: var(--font-size-1);
-		padding-inline-start: var(--size-2);
+		font-size: var(--font-size-fluid-1);
+		padding-inline-start: var(--size-fluid-1);
+	}
+
+	@media (min-width: 768px) {
 	}
 </style>
