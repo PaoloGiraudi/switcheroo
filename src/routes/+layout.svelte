@@ -7,16 +7,24 @@
 	import Settings from '../components/settings.svelte';
 	import Close from '../components/icons/close.svelte';
 	import SettingsIcon from '../components/icons/settings.svelte';
+	import Drawer from '../components/drawer.svelte';
 	let open = false;
 
 	const handleOpen = () => (open = !open);
 </script>
 
+<svelte:head>
+	<meta name="theme-color" media="(prefers-color-scheme: light)" content="#dee2e6" />
+	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#16191d" />
+</svelte:head>
+
 <div class="layout">
 	<main>
 		<slot />
 	</main>
-	<Settings bind:open />
+	<Drawer bind:open>
+		<Settings />
+	</Drawer>
 	<button on:click={handleOpen}>
 		<svelte:component this={open ? Close : SettingsIcon} />
 	</button>

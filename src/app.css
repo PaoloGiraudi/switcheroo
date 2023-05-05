@@ -1,4 +1,5 @@
-@import '@fontsource/rubik';
+@import '@fontsource/rubik/400.css';
+@import '@fontsource/rubik/500.css';
 
 html {
 	/* font */
@@ -6,17 +7,17 @@ html {
 
 	/* dark */
 	--accent-dark: var(--red-9);
-	--text-1-dark: var(--gray-3);
-	--text-2-dark: var(--gray-5);
-	--surface-dark: var(--gray-10);
-	--background-dark: var(--gray-12);
+	--text-1-dark: var(--gray-2);
+	--text-2-dark: var(--gray-3);
+	--surface-dark: var(--gray-8);
+	--background-dark: var(--gray-10);
 
 	/* light */
 	--accent-light: var(--red-10);
-	--text-1-light: var(--gray-8);
-	--text-2-light: var(--gray-7);
-	--surface-light: var(--gray-1);
-	--background-light: var(--gray-2);
+	--text-1-light: var(--gray-10);
+	--text-2-light: var(--gray-8);
+	--surface-light: var(--gray-2);
+	--background-light: var(--gray-3);
 }
 
 :root {
@@ -78,6 +79,8 @@ button {
 	--_highlight-size: 0;
 	--_highlight-light: none;
 	--_ink-shadow-light: none;
+	--_highlight-dark: none;
+	--_ink-shadow-dark: none;
 	--_icon-size: unset;
 	border-color:  transparent;
 }
