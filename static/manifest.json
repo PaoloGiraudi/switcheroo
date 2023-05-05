@@ -3,13 +3,13 @@
 	"name": "Converter",
 	"short_name": "Converter",
 	"description": "Convert your life to easy",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"start_url": "/",
 	"scope": "/",
 	"display": "standalone",
 	"orientation": "portrait",
-	"theme_color": "#b80c09",
-	"background_color": "#b80c09",
+	"theme_color": "#b02525",
+	"background_color": "#b02525",
 	"dir": "ltr",
 	"lang": "en",
 	"icons": [
@@ -22,14 +22,6 @@
 			"src": "/icons/icon-512.png",
 			"sizes": "512x512",
 			"type": "image/png"
-		}
-	],
-	"shortcuts": [
-		{
-			"name": "Settings",
-			"short_name": "Settings",
-			"description": "Go to settings",
-			"url": "/settings"
 		}
 	]
 }
