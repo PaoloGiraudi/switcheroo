@@ -6,61 +6,72 @@ html {
 	--font-sans: 'Rubik', sans-serif;
 
 	/* dark */
-	--accent-dark: var(--red-9);
+	--brand-dark: var(--red-9);
 	--text-1-dark: var(--gray-2);
 	--text-2-dark: var(--gray-3);
-	--surface-dark: var(--gray-8);
+	--surface-1-dark: var(--gray-8);
+	--surface-2-dark: var(--gray-7);
 	--background-dark: var(--gray-10);
+	--link-visited-dark: var(--red-3);
 
 	/* light */
-	--accent-light: var(--red-10);
+	--brand-light: var(--red-10);
 	--text-1-light: var(--gray-10);
 	--text-2-light: var(--gray-8);
-	--surface-light: var(--gray-2);
+	--surface-1-light: var(--gray-2);
+	--surface-2-light: var(--gray-3);
 	--background-light: var(--gray-3);
+	--link-visited-light: var(--red-11);
 }
 
 :root {
 	color-scheme: dark;
 
-	--accent: var(--accent-dark);
+	--brand: var(--brand-dark);
 	--text-1: var(--text-1-dark);
 	--text-2: var(--text-2-dark);
-	--surface: var(--surface-dark);
+	--surface-1: var(--surface-1-dark);
+	--surface-2: var(--surface-2-dark);
 	--background: var(--background-dark);
+	--link-visited: var(--link-visited-dark);
 }
 
 @media (prefers-color-scheme: light) {
 	:root {
 		color-scheme: light;
 
-		--accent: var(--accent-light);
+		--brand: var(--brand-light);
 		--text-1: var(--text-1-light);
 		--text-2: var(--text-2-light);
-		--surface: var(--surface-light);
+		--surface-1: var(--surface-1-light);
+		--surface-2: var(--surface-2-light);
 		--background: var(--background-light);
+		--link-visited: var(--link-visited-light);
 	}
 }
 
 [color-scheme='dark'] {
 	color-scheme: dark;
 
-	--accent: var(--accent-dark);
+	--brand: var(--brand-dark);
 	--text-1: var(--text-1-dark);
 	--text-2: var(--text-2-dark);
-	--surface: var(--surface-dark);
+	--surface-1: var(--surface-1-dark);
+	--surface-2: var(--surface-2-dark);
 	--background: var(--background-dark);
+	--link-visited: var(--link-visited-dark);
 }
 
 [color-scheme='light'] {
 	color-scheme: light;
 
-    --accent: var(--accent-light);
-    --text-1: var(--text-1-light);
-    --text-2: var(--text-2-light);
-    --surface: var(--surface-light);
-    --background: var(--background-light);
-
+	--brand: var(--brand-light);
+	--text-1: var(--text-1-light);
+	--text-2: var(--text-2-light);
+	--surface-1: var(--surface-1-light);
+	--surface-2: var(--surface-2-light);
+	--background: var(--background-light);
+	--link-visited: var(--link-visited-light);
 }
 
 body,html {
@@ -68,19 +79,9 @@ body,html {
 }
 
 html {
-
 	color: var(--text-1);
-	accent-color: var(--accent);
+	accent-color: var(--brand);
 	background-color: var(--background);
 	background-attachment: fixed;
 }
 
-button {
-	--_highlight-size: 0;
-	--_highlight-light: none;
-	--_ink-shadow-light: none;
-	--_highlight-dark: none;
-	--_ink-shadow-dark: none;
-	--_icon-size: unset;
-	border-color:  transparent;
-}
