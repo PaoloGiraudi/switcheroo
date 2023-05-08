@@ -1,9 +1,10 @@
 export enum Conversion {
-	MetersToFeet = 'MetersToFeet',
+	CelsiusToFahrenheit = 'CelsiusToFahrenheit',
 	CentimetersToInches = 'CentimetersToInches',
+	MetersToFeet = 'MetersToFeet',
+	SqMetersToSqFeet = 'SqMetersToSqFeet',
 	KilogramsToPounds = 'KilogramsToPounds',
-	LitersToGallons = 'LitersToGallons',
-	CelsiusToFahrenheit = 'CelsiusToFahrenheit'
+	LitersToGallons = 'LitersToGallons'
 }
 
 export const conversions: Conversion[] = [...Object.values(Conversion)];
