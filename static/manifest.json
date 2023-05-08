@@ -1,9 +1,9 @@
 {
-	"id": "0.1.1",
+	"id": "0.1.2",
 	"name": "Converter",
 	"short_name": "Converter",
 	"description": "Convert your life to easy",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"start_url": "/",
 	"scope": "/",
 	"display": "standalone",

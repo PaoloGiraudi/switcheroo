@@ -37,5 +37,11 @@ export const definitions: Record<Conversion, Def> = {
 		right: 'Pounds',
 		setFromLeft: (value: string) => +(+value * 2.2046).toFixed(2),
 		setFromRight: (value: string) => +(+value / 2.2046).toFixed(2)
+	},
+	SqMetersToSqFeet: {
+		left: 'Meters²',
+		right: 'Feet²',
+		setFromLeft: (value: string) => +(+value * 10.764).toFixed(2),
+		setFromRight: (value: string) => +(+value / 10.764).toFixed(2)
 	}
 };
