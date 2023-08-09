@@ -2,86 +2,90 @@
 @import '@fontsource/rubik/500.css';
 
 html {
-	/* font */
-	--font-sans: 'Rubik', sans-serif;
+  /* font */
+  --font-sans: 'Rubik', sans-serif;
+  --color-hue: var(--hue-blue);
+  --gray-hue: var(--hue-blue);
+  --gray-chroma: 0.005;
+  --shadow-color: var(--gray-12-hsl);
 
-	/* dark */
-	--brand-dark: var(--red-9);
-	--text-1-dark: var(--gray-2);
-	--text-2-dark: var(--gray-3);
-	--surface-1-dark: var(--gray-8);
-	--surface-2-dark: var(--gray-7);
-	--background-dark: var(--gray-10);
-	--link-visited-dark: var(--red-3);
+  /* dark */
+  --brand-dark: var(--color-bright);
+  --text-1-dark: var(--gray-1);
+  --text-2-dark: var(--gray-4);
+  --surface-1-dark: var(--gray-13);
+  --surface-2-dark: var(--gray-11);
+  --background-dark: var(--gray-13);
+  --shadow-strength-dark: 40%;
 
-	/* light */
-	--brand-light: var(--red-10);
-	--text-1-light: var(--gray-10);
-	--text-2-light: var(--gray-8);
-	--surface-1-light: var(--gray-2);
-	--surface-2-light: var(--gray-3);
-	--background-light: var(--gray-3);
-	--link-visited-light: var(--red-11);
+  /* light */
+  --brand-light: var(--color-bright);
+  --text-1-light: var(--gray-13);
+  --text-2-light: var(--gray-9);
+  --surface-1-light: var(--gray-2);
+  --surface-2-light: var(--gray-3);
+  --background-light: var(--gray-2);
+  --shadow-strength-light: 1%;
 }
 
 :root {
-	color-scheme: dark;
+  color-scheme: dark;
 
-	--brand: var(--brand-dark);
-	--text-1: var(--text-1-dark);
-	--text-2: var(--text-2-dark);
-	--surface-1: var(--surface-1-dark);
-	--surface-2: var(--surface-2-dark);
-	--background: var(--background-dark);
-	--link-visited: var(--link-visited-dark);
+  --brand: var(--brand-dark);
+  --text-1: var(--text-1-dark);
+  --text-2: var(--text-2-dark);
+  --surface-1: var(--surface-1-dark);
+  --surface-2: var(--surface-2-dark);
+  --background: var(--background-dark);
+  --shadow-strength: var(--shadow-strength-dark);
 }
 
 @media (prefers-color-scheme: light) {
-	:root {
-		color-scheme: light;
+  :root {
+    color-scheme: light;
 
-		--brand: var(--brand-light);
-		--text-1: var(--text-1-light);
-		--text-2: var(--text-2-light);
-		--surface-1: var(--surface-1-light);
-		--surface-2: var(--surface-2-light);
-		--background: var(--background-light);
-		--link-visited: var(--link-visited-light);
-	}
+    --brand: var(--brand-light);
+    --text-1: var(--text-1-light);
+    --text-2: var(--text-2-light);
+    --surface-1: var(--surface-1-light);
+    --surface-2: var(--surface-2-light);
+    --background: var(--background-light);
+    --shadow-strength: var(--shadow-strength-light);
+  }
 }
 
 [color-scheme='dark'] {
-	color-scheme: dark;
+  color-scheme: dark;
 
-	--brand: var(--brand-dark);
-	--text-1: var(--text-1-dark);
-	--text-2: var(--text-2-dark);
-	--surface-1: var(--surface-1-dark);
-	--surface-2: var(--surface-2-dark);
-	--background: var(--background-dark);
-	--link-visited: var(--link-visited-dark);
+  --brand: var(--brand-dark);
+  --text-1: var(--text-1-dark);
+  --text-2: var(--text-2-dark);
+  --surface-1: var(--surface-1-dark);
+  --surface-2: var(--surface-2-dark);
+  --background: var(--background-dark);
+  --shadow-strength: var(--shadow-strength-dark);
 }
 
 [color-scheme='light'] {
-	color-scheme: light;
+  color-scheme: light;
 
-	--brand: var(--brand-light);
-	--text-1: var(--text-1-light);
-	--text-2: var(--text-2-light);
-	--surface-1: var(--surface-1-light);
-	--surface-2: var(--surface-2-light);
-	--background: var(--background-light);
-	--link-visited: var(--link-visited-light);
+  --brand: var(--brand-light);
+  --text-1: var(--text-1-light);
+  --text-2: var(--text-2-light);
+  --surface-1: var(--surface-1-light);
+  --surface-2: var(--surface-2-light);
+  --background: var(--background-light);
+  --shadow-strength: var(--shadow-strength-light);
 }
 
-body,html {
-    height: 100%;
+body,
+html {
+  height: 100%;
 }
 
 html {
-	color: var(--text-1);
-	accent-color: var(--brand);
-	background-color: var(--background);
-	background-attachment: fixed;
+  color: var(--text-1);
+  accent-color: var(--brand);
+  background-color: var(--background);
+  background-attachment: fixed;
 }
-
