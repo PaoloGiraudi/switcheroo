@@ -4,9 +4,7 @@
 html {
   /* font */
   --font-sans: 'Rubik', sans-serif;
-  --color-hue: var(--hue-blue);
-  --gray-hue: var(--hue-blue);
-  --gray-chroma: 0.005;
+  --color-hue: var(--hue-red);
   --shadow-color: var(--gray-12-hsl);
 
   /* dark */
@@ -19,7 +17,7 @@ html {
   --shadow-strength-dark: 40%;
 
   /* light */
-  --brand-light: var(--color-bright);
+  --brand-light: var(--color-7);
   --text-1-light: var(--gray-13);
   --text-2-light: var(--gray-9);
   --surface-1-light: var(--gray-2);
