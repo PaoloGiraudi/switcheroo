@@ -1,17 +1,23 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <title>Switcheroo</title>
+    <meta name="title" content="Switcheroo - A Simple Converter" />
+    <meta name="description" content="" />
+    <meta
+      name="keywords"
+      content="Switcheroo, converter, PWA, online converter, transformer, unit conversion, miles to kilometers, centimeters to inches, metric to imperial, metric, imperial"
+    />
+    <meta property="og:title" content="Switcheroo - A Simple Converter" />
+    <meta property="og:description" content="" />
+    <meta property="og:image" content="%sveltekit.assets%/icons/icon_512.png" />
+
+    <base href="/" />
     <meta charset="utf-8" />
     <link rel="icon" href="%sveltekit.assets%/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="manifest" href="%sveltekit.assets%/manifest.json" />
     %sveltekit.head%
-    <script type="module">
-      const theme = localStorage.getItem('color-scheme');
-      theme
-        ? document.documentElement.setAttribute('color-scheme', theme)
-        : localStorage.setItem('color-scheme', 'light');
-    </script>
   </head>
   <body data-sveltekit-preload-data="hover">
     <div style="display: contents">%sveltekit.body%</div>
