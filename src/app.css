@@ -8,7 +8,7 @@ html {
   --shadow-color: var(--gray-12-hsl);
 
   /* dark */
-  --brand-dark: var(--color-bright);
+  --brand-dark: var(--color-8);
   --text-1-dark: var(--gray-1);
   --text-2-dark: var(--gray-4);
   --surface-1-dark: var(--gray-13);
