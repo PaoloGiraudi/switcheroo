@@ -17,6 +17,9 @@
 </svelte:head>
 
 <div class="layout">
+  <div class="wip">
+    <p>Still under development!</p>
+  </div>
   <main>
     <slot />
   </main>
@@ -31,6 +34,14 @@
 </div>
 
 <style>
+  .wip {
+    display: flex;
+    padding: var(--size-4);
+    background-color: var(--orange-5);
+    justify-content: center;
+    margin-top: var(--size-1);
+    border-radius: var(--radius-2);
+  }
   .layout {
     margin-inline: auto;
     max-inline-size: var(--size-md);
