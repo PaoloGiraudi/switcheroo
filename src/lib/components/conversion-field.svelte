@@ -1,9 +1,7 @@
 <script lang="ts">
-  import type { Def } from '../lib/definitions';
+  import type { Def } from '../lib/types';
   import Input from './input.svelte';
-
   export let def: Def;
-
   let left: number | null = null;
   let right: number | null = null;
 

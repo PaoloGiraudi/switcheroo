@@ -9,6 +9,7 @@ html {
 
   /* dark */
   --brand-dark: var(--color-8);
+  --warning-dark: var(--yellow-4);
   --text-1-dark: var(--gray-1);
   --text-2-dark: var(--gray-4);
   --surface-1-dark: var(--gray-13);
@@ -18,11 +19,12 @@ html {
 
   /* light */
   --brand-light: var(--color-7);
+  --warning-light: var(--orange-4);
   --text-1-light: var(--gray-13);
   --text-2-light: var(--gray-9);
   --surface-1-light: var(--gray-2);
-  --surface-2-light: var(--gray-3);
-  --background-light: var(--gray-2);
+  --surface-2-light: var(--gray-2);
+  --background-light: var(--gray-1);
   --shadow-strength-light: 1%;
 }
 
@@ -30,6 +32,7 @@ html {
   color-scheme: dark;
 
   --brand: var(--brand-dark);
+  --warning: var(--warning-dark);
   --text-1: var(--text-1-dark);
   --text-2: var(--text-2-dark);
   --surface-1: var(--surface-1-dark);
@@ -43,6 +46,7 @@ html {
     color-scheme: light;
 
     --brand: var(--brand-light);
+    --warning: var(--warning-light);
     --text-1: var(--text-1-light);
     --text-2: var(--text-2-light);
     --surface-1: var(--surface-1-light);
@@ -56,6 +60,7 @@ html {
   color-scheme: dark;
 
   --brand: var(--brand-dark);
+  --warning: var(--warning-dark);
   --text-1: var(--text-1-dark);
   --text-2: var(--text-2-dark);
   --surface-1: var(--surface-1-dark);
@@ -68,6 +73,7 @@ html {
   color-scheme: light;
 
   --brand: var(--brand-light);
+  --warning: var(--warning-light);
   --text-1: var(--text-1-light);
   --text-2: var(--text-2-light);
   --surface-1: var(--surface-1-light);
@@ -76,14 +82,20 @@ html {
   --shadow-strength: var(--shadow-strength-light);
 }
 
-body,
-html {
-  height: 100%;
-}
-
 html {
   color: var(--text-1);
   accent-color: var(--brand);
   background-color: var(--background);
   background-attachment: fixed;
+}
+
+body,
+html {
+  height: 100dvh;
+  width: 100dvw;
+  overflow-x: hidden;
+}
+
+a:visited {
+  color: inherit;
 }

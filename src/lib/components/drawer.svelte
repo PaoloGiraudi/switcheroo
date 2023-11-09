@@ -43,7 +43,7 @@
     height: var(--size-fluid-5);
     aspect-ratio: var(--ratio-square);
     position: absolute;
-    background: var(--surface-1);
+    background: var(--background);
     box-shadow: var(--shadow-2);
     border: var(--border-size-1) solid var(--surface-2);
     bottom: var(--size-3);

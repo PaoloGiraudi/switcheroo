@@ -1,12 +1,12 @@
 <script lang="ts">
-  import Field from '../components/field.svelte';
-  import { definitions } from '../lib/definitions';
-  import { conversions } from '../lib/conversions';
+  import ConversionField from '../components/conversion-field.svelte';
+  import type { PageData } from './$types';
+  export let data: PageData;
 </script>
 
 <div>
-  {#each conversions as conversion}
-    <Field def={definitions[conversion]} />
+  {#each data.conversions as [_, value]}
+    <ConversionField def={value} />
   {/each}
 </div>
 
@@ -14,10 +14,13 @@
   div {
     display: flex;
     flex-direction: column;
+    max-inline-size: var(--size-md);
     gap: var(--size-2);
   }
+
   @media (min-width: 640px) {
     div {
+      max-inline-size: var(--size-xl);
       gap: var(--size-4);
       display: grid;
       grid-template-columns: 1fr 1fr;
