@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ConversionField from '../components/conversion-field.svelte';
+  import ConversionField from '$lib/components/conversion-field.svelte';
   import type { PageData } from './$types';
   export let data: PageData;
 </script>

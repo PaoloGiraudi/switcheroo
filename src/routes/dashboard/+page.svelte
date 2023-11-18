@@ -12,11 +12,9 @@
 </div>
 
 {#if data.userId}
-  <div class="add-button">
-    <a href="/add">
-      <Plus />
-    </a>
-  </div>
+  <a href="/add" class="add-button">
+    <Plus />
+  </a>
 {/if}
 
 <style>

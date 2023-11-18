@@ -1,8 +1,8 @@
 <script>
   import { onMount } from 'svelte';
-  import Sun from './icons/sun.svelte';
-  import Moon from './icons/moon.svelte';
-  import { setTheme, theme } from '$lib/theme';
+  import Sun from '$lib/icons/sun.svelte';
+  import Moon from '$lib/icons/moon.svelte';
+  import { setTheme, theme } from '$lib/stores/theme';
   onMount(() => document.documentElement.setAttribute('color-scheme', $theme));
 </script>
 

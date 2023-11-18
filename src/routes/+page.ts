@@ -1,12 +1,6 @@
 import configureMeasurements, { allMeasures } from 'convert-units';
 import type { PageLoad } from './$types';
-
-type Def = {
-  left: string;
-  right: string;
-  setFromLeft: (value: string) => number;
-  setFromRight: (value: string) => number;
-};
+import type { Def } from '$lib/types';
 
 export const load: PageLoad = async ({ data }) => {
   const convert = configureMeasurements(allMeasures);
