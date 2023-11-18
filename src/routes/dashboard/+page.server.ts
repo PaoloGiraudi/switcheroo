@@ -38,3 +38,5 @@ export const actions: Actions = {
     throw redirect(302, '/login'); // redirect to login page
   }
 };
+
+export const ssr = false;

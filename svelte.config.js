@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-vercel';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
@@ -20,6 +20,9 @@ const config = {
     adapter: adapter(),
     version: {
       name: pkg.version
+    },
+    prerender: {
+      handleHttpError: 'warn'
     }
   }
 };

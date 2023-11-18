@@ -24,4 +24,4 @@ export const load: PageServerLoad = async ({ locals }) => {
   };
 };
 
-export const prerender = true;
+export const ssr = false;

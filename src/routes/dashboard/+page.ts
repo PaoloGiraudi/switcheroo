@@ -1,9 +1,10 @@
-import configureMeasurements, { allMeasures } from 'convert-units';
+import configMeasurements from 'convert-units';
+import { allMeasures } from 'convert-units';
 import type { PageLoad } from './$types';
 import type { Def } from '$lib/types';
 
 export const load: PageLoad = async ({ data }) => {
-  const convert = configureMeasurements(allMeasures);
+  const convert = configMeasurements(allMeasures);
   const conversions = new Map<string, Def>();
 
   data.result?.userToConversions.forEach((item) => {
