@@ -14,6 +14,7 @@
 <style>
   .card {
     border-radius: var(--radius-2);
+    background-color: var(--background);
     display: flex;
     flex-direction: column;
     border: var(--border-size-1) solid var(--surface-2);

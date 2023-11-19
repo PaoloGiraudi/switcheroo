@@ -7,7 +7,6 @@
 <nav>
   <a href="/">Switcheroo</a>
   <div class="right">
-    <ThemeSwitch />
     {#if user}
       <p class="welcome">Hey, {user}!</p>
       <form action="/dashboard?/logout" method="post" use:enhance>
@@ -21,6 +20,7 @@
         <a href="/login">Login</a>
       </div>
     {/if}
+    <ThemeSwitch />
   </div>
 </nav>
 
@@ -29,12 +29,13 @@
     text-decoration: none;
   }
   nav {
+    z-index: var(--layer-important);
     padding: var(--size-2);
+    padding-inline-start: var(--size-6);
     position: sticky;
     top: 0;
     background-color: var(--background);
     display: flex;
-    padding-inline: var(--size-6);
     justify-content: space-between;
     align-items: center;
     border-bottom: var(--border-size-1) solid var(--surface-2);
@@ -45,6 +46,10 @@
     gap: var(--size-2);
   }
 
+  .right :global(button) {
+    margin-inline-start: var(--size-2);
+  }
+
   .welcome {
     display: none;
     align-self: center;
@@ -52,6 +57,8 @@
   }
 
   .button-link {
+    display: grid;
+    place-items: center;
     padding-inline: var(--size-4);
     padding-block: var(--size-1);
     font-weight: 500;

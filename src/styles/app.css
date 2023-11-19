@@ -11,21 +11,23 @@ html {
   --brand-dark: var(--color-8);
   --warning-dark: var(--yellow-4);
   --text-1-dark: var(--gray-1);
-  --text-2-dark: var(--gray-4);
+  --text-2-dark: var(--gray-2);
   --surface-1-dark: var(--gray-13);
   --surface-2-dark: var(--gray-11);
   --background-dark: var(--gray-13);
   --shadow-strength-dark: 40%;
+  --blob-dark: var(--gradient-1);
 
   /* light */
   --brand-light: var(--color-7);
   --warning-light: var(--orange-4);
   --text-1-light: var(--gray-13);
-  --text-2-light: var(--gray-9);
+  --text-2-light: var(--gray-10);
   --surface-1-light: var(--gray-2);
   --surface-2-light: var(--gray-2);
   --background-light: var(--gray-1);
   --shadow-strength-light: 1%;
+  --blob-light: var(--gradient-25);
 }
 
 :root {
@@ -39,6 +41,7 @@ html {
   --surface-2: var(--surface-2-dark);
   --background: var(--background-dark);
   --shadow-strength: var(--shadow-strength-dark);
+  --blob: var(--blob-dark);
 }
 
 @media (prefers-color-scheme: light) {
@@ -53,6 +56,7 @@ html {
     --surface-2: var(--surface-2-light);
     --background: var(--background-light);
     --shadow-strength: var(--shadow-strength-light);
+    --blob: var(--blob-light);
   }
 }
 
@@ -67,6 +71,7 @@ html {
   --surface-2: var(--surface-2-dark);
   --background: var(--background-dark);
   --shadow-strength: var(--shadow-strength-dark);
+  --blob: var(--blob-dark);
 }
 
 [color-scheme='light'] {
@@ -80,9 +85,11 @@ html {
   --surface-2: var(--surface-2-light);
   --background: var(--background-light);
   --shadow-strength: var(--shadow-strength-light);
+  --blob: var(--blob-light);
 }
 
 html {
+  --font-size-9: 4rem;
   color: var(--text-1);
   accent-color: var(--brand);
   background-color: var(--background);
@@ -94,6 +101,10 @@ html {
   height: 100dvh;
   width: 100dvw;
   overflow-x: hidden;
+}
+
+a {
+  padding: 0;
 }
 
 a:visited {

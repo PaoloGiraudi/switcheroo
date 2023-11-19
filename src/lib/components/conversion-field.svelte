@@ -20,7 +20,7 @@
   };
 </script>
 
-<div>
+<div class="conversion-field">
   <Input name={def.left} on:input={setBothFromLeft} value={left} />
   <Input name={def.right} on:input={setBothFromRight} value={right} />
 </div>

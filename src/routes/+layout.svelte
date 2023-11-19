@@ -5,7 +5,8 @@
   import 'open-props/gray-oklch.min.css';
   import 'open-props/gray-hsl.min.css';
   import 'open-props/colors-oklch.min.css';
-  import '../app.css';
+  import '../styles/app.css';
+  import '../styles/reset.css';
   import { Navbar } from '../lib/components';
   import type { LayoutData } from './$types';
   export let data: LayoutData;
@@ -22,23 +23,6 @@
     <slot />
   </main>
 </div>
-
-<!-- button {
-  border-radius: var(--radius-2);
-  color: var(--text-1);
-  display: grid;
-  place-items: center;
-  height: var(--size-fluid-5);
-  aspect-ratio: var(--ratio-square);
-    background-color: var(--background);
-  box-shadow: var(--shadow-2);
-  border: var(--border-size-1) solid var(--surface-2);
-} -->
-
-<!-- <div data-display="desktop">
-  <ThemeSwitch />
-  <Info />
-</div> -->
 
 <style>
   .layout {

@@ -1,5 +1,4 @@
-import configMeasurements from 'convert-units';
-import { allMeasures } from 'convert-units';
+import configMeasurements, { allMeasures } from 'convert-units';
 import type { PageLoad } from './$types';
 import type { Def } from '$lib/types';
 
