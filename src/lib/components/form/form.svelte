@@ -1,13 +1,27 @@
 <script lang="ts">
-  import { enhance } from '$app/forms';
+  import { applyAction, enhance } from '$app/forms';
+  import Spinner from '$lib/icons/spinner.svelte';
+  import type { SubmitFunction } from '@sveltejs/kit';
   export let button: string | null = null;
   export let disabled: boolean | undefined = false;
+  $: submitting = false;
+
+  const onSubmit: SubmitFunction = () => {
+    submitting = true;
+    return async ({ result }) => {
+      submitting = false;
+      await applyAction(result);
+    };
+  };
 </script>
 
-<form method="POST" use:enhance>
+<form method="POST" use:enhance={onSubmit}>
   <slot />
-  <button type="submit" {disabled}>
+  <button type="submit" disabled={disabled || submitting}>
     <span>{button}</span>
+    {#if submitting}
+      <Spinner />
+    {/if}
   </button>
 </form>
 
@@ -18,11 +32,17 @@
     flex-direction: column;
   }
   button {
+    --btn-color: #000;
     margin-block-start: var(--size-2);
     background-color: var(--brand);
     padding-block: var(--size-2);
     border-radius: var(--radius-2);
-    color: #000;
+    color: var(--btn-color);
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    gap: var(--size-2);
+
     &:hover {
       filter: brightness(0.9);
     }

@@ -3,7 +3,7 @@
 </script>
 
 <Field label="Username" name="username">
-  <input name="username" id="username" type="text" placeholder="Placeholder..." />
+  <input name="username" id="username" type="text" placeholder="John_doe" />
 </Field>
 <Field label="Password" name="password">
   <input name="password" id="password" type="password" placeholder="********" />

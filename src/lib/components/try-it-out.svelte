@@ -26,24 +26,30 @@
 
 <style>
   .try-out {
+    margin-top: var(--size-8);
     justify-content: center;
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: var(--size-8);
+    gap: var(--size-4);
   }
 
   span {
-    font-size: var(--font-size-6);
+    font-size: var(--font-size-5);
     font-weight: 500;
   }
 
   @media (min-width: 640px) {
     .try-out {
+      margin-top: 0;
+      gap: var(--size-8);
       width: 40%;
     }
     .try-out :global(.conversion-field) {
       transform: scale(0.7);
+    }
+    span {
+      font-size: var(--font-size-6);
     }
   }
 </style>

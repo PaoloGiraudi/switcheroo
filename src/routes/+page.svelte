@@ -71,7 +71,6 @@
 
   .top-screen {
     position: relative;
-
     display: flex;
     flex-direction: column;
   }
@@ -149,7 +148,7 @@
     header {
       flex-grow: 2;
       height: 70dvh;
-      padding-inline-start: var(--size-9);
+      padding-inline-start: var(--size-fluid-6);
     }
     header > h1 {
       font-size: var(--font-size-8);

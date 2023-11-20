@@ -21,4 +21,13 @@
     display: inline-block;
     transform: rotate(-90deg);
   }
+
+  @media (min-width: 640px) {
+    svg {
+      margin-left: var(--size-6);
+      color: var(--text-1);
+      display: inline-block;
+      transform: rotate(-90deg);
+    }
+  }
 </style>
