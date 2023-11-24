@@ -31,6 +31,9 @@
     display: flex;
     flex-direction: column;
   }
+  form :global(input) {
+    background-color: var(--surface-2);
+  }
   button {
     --btn-color: #000;
     margin-block-start: var(--size-2);
