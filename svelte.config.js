@@ -21,9 +21,6 @@ const config = {
     version: {
       name: pkg.version
     },
-    prerender: {
-      handleHttpError: 'warn'
-    }
   }
 };
 
