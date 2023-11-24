@@ -37,10 +37,10 @@
     </div>
     <button
       type="submit"
-      disabled={!$form.category || !$left?.name || !$right?.name || Boolean(submitting)}
+      disabled={!$form.category || !$left?.name || !$right?.name || $submitting}
     >
       <span>Submit</span>
-      {#if submitting}
+      {#if $submitting}
         <Spinner />
       {/if}
     </button>
