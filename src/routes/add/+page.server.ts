@@ -60,7 +60,8 @@ export const actions: Actions = {
         conversionsId: conversionId[0].columnId,
         userId: session?.user.userId
       });
-      console.log('result:', result);
+
+      return result;
     } catch (error) {
       console.log(error);
     }
