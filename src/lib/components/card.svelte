@@ -13,12 +13,9 @@
 
 <style>
   .card {
-    border-radius: var(--radius-2);
     background-color: var(--background);
     display: flex;
     flex-direction: column;
-    border: var(--border-size-1) solid var(--surface-2);
-    box-shadow: var(--shadow-2);
     padding: var(--size-4);
     gap: var(--size-4);
   }
@@ -32,8 +29,11 @@
 
   @media (min-width: 640px) {
     .card {
+      border-radius: var(--radius-2);
+      border: var(--border-size-1) solid var(--surface-2);
       padding: var(--size-6);
       min-width: var(--size-content-3);
+      box-shadow: var(--shadow-2);
     }
   }
 </style>

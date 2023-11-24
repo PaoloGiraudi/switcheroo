@@ -9,6 +9,7 @@
   import '../styles/reset.css';
   import { Navbar } from '../lib/components';
   import type { LayoutData } from './$types';
+  import SlidingText from '$lib/components/sliding-text.svelte';
   export let data: LayoutData;
 </script>
 
@@ -31,7 +32,7 @@
     position: relative;
   }
   main {
-    padding: var(--size-2);
+    padding-block: var(--size-2);
     display: flex;
     flex-direction: column;
   }

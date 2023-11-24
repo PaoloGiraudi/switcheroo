@@ -26,11 +26,18 @@
 </div>
 
 <style>
-  div {
+  .conversion-field {
+    margin-inline: var(--size-2);
     border: var(--border-size-1) solid var(--surface-2);
     overflow: hidden;
     border-radius: var(--radius-2);
     display: flex;
     box-shadow: var(--shadow-2);
+  }
+
+  @media (min-width: 640px) {
+    .conversion-field {
+      margin-inline: 0;
+    }
   }
 </style>

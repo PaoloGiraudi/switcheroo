@@ -1,11 +1,19 @@
 <script lang="ts">
   import { enhance } from '$app/forms';
+  import { page } from '$app/stores';
+  import Back from '$lib/icons/back.svelte';
   import ThemeSwitch from './theme-switch.svelte';
   export let user: string | undefined;
 </script>
 
 <nav>
-  <a href="/">Switcheroo</a>
+  <a href="/">
+    {#if $page.route.id !== '/' && $page.route.id !== '/dashboard'}
+      <Back />
+    {:else}
+      Switcheroo
+    {/if}
+  </a>
   <div class="right">
     {#if user}
       <p class="welcome">Hey, {user}!</p>

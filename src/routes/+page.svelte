@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ConversionField from '$lib/components/conversion-field.svelte';
+  import SlidingText from '$lib/components/sliding-text.svelte';
   import TryItOut from '$lib/components/try-it-out.svelte';
 </script>
 
@@ -22,42 +22,8 @@
     </header>
     <TryItOut />
   </div>
-
-  <section>
-    <h2>Key Features:</h2>
-    <ul>
-      <li>Wide range of conversions</li>
-      <li>Personalized dashboard</li>
-      <li>Mobile friendly and downloadable (PWA)</li>
-      <li>No ads, I promise</li>
-      <li>Free to use, for now</li>
-      <li>customizable conversions, that's the hard part, wait, that part can't be free. oh.</li>
-      <li>...and more to come!</li>
-    </ul>
-
-    <h2>Get Started Now!</h2>
-    <p>
-      Sign up for a free account (no email required) to save your dashboard and access your
-      conversions from any device.
-    </p>
-  </section>
-
-  <section>
-    <h2>Switcheroo Anywhere, Anytime</h2>
-    <p>
-      Take Switcheroo with you on the go! Our app is designed to be mobile-friendly, ensuring a
-      seamless experience on your smartphone or tablet.
-    </p>
-    <div>
-      <!-- <img src="download-icon.png" alt="Download Icon" /> -->
-      <p>
-        Download Switcheroo as a Progressive Web App (PWA) for instant access without the need for
-        app stores.
-      </p>
-      <button>Download Now</button>
-    </div>
-  </section>
 </div>
+<SlidingText />
 
 <style>
   .landing {
