@@ -1,21 +1,22 @@
 <script lang="ts">
-  import { capitalize } from '$lib/helpers/formatters';
+  import { capitalize, unwrap } from '$lib/helpers/formatters';
   import Field from './form/field.svelte';
   export let placeholder: string | undefined = '---';
   export let label: string;
   export let name: 'left' | 'right' | 'category';
   export let disabled: boolean | undefined = false;
-  export let value: unknown;
-  export let options: Record<'unit' | 'name', string>[] | string[] = [];
+  export let value: unknown | null = null;
+  export let options: string[] = [];
+  export let object: boolean = false;
 </script>
 
 <Field {name} {label}>
-  <select id={name} {name} bind:value {disabled} class:empty={!value}>
+  <select id={name} {name} bind:value {disabled} class:empty={!value} on:change>
     <optgroup label={`Select ${name}`}>
-      <option value={undefined} disabled selected hidden>{placeholder}</option>
+      <option value={null} disabled selected hidden>{placeholder}</option>
       {#each options as value}
         <option {value}>
-          {typeof value === 'string' ? capitalize(value) : capitalize(value.name)}
+          {object ? capitalize(unwrap(value).name) : capitalize(value)}
         </option>
       {/each}
     </optgroup>

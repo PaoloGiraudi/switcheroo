@@ -1,95 +1,62 @@
 <script lang="ts">
   import { options } from '$lib/stores/options';
-  import { fieldProxy, superForm } from 'sveltekit-superforms/client';
-  import type { PageData } from './$types';
   import { allMeasures } from 'convert-units';
   import { Card, Select } from '$lib/components';
-  import Spinner from '$lib/icons/spinner.svelte';
+  import Form from '$lib/components/form/form.svelte';
+  import { page } from '$app/stores';
+  import Message from '$lib/components/form/message.svelte';
 
   const measures = Object.keys(allMeasures);
 
-  export let data: PageData;
+  let category: string | null = null;
+  let left: string | null = null;
+  let right: string | null = null;
 
-  const { form, enhance, submitting } = superForm(data.form, {
-    dataType: 'json',
-    taintedMessage: null
-  });
-
-  const category = fieldProxy(form, 'category');
-  const left = fieldProxy(form, 'left');
-  const right = fieldProxy(form, 'right');
-
-  $: units = $form?.category ? $options.get($form?.category) : [];
+  $: units = category ? $options.get(category) : [];
+  $: message = $page?.form?.message;
 </script>
 
 <Card title="Add a new conversion">
-  <form use:enhance method="POST">
+  <Form disabled={!category || !left || !right}>
     <div class="add-fields">
       <Select
-        bind:value={$category}
+        on:change={() => (left = right = null)}
+        bind:value={category}
         options={measures}
         label="Category"
         name="category"
         placeholder="Speed, temperature..."
       />
-      <Select bind:value={$left} options={units} disabled={!$category} label="From" name="left" />
-      <Select bind:value={$right} options={units} disabled={!$category} label="To" name="right" />
+      <Select
+        bind:value={left}
+        options={units}
+        disabled={!category}
+        label="From"
+        name="left"
+        object
+      />
+      <Select
+        bind:value={right}
+        options={units}
+        disabled={!category}
+        label="To"
+        name="right"
+        object
+      />
     </div>
-    <button
-      type="submit"
-      disabled={!$form.category || !$left?.name || !$right?.name || $submitting}
-    >
-      <span>Submit</span>
-      {#if $submitting}
-        <Spinner />
-      {/if}
-    </button>
-  </form>
+  </Form>
+  {#if message}
+    <Message {message} />
+  {/if}
 </Card>
 
 <style>
-  form {
-    gap: var(--size-3);
-    display: flex;
-    flex-direction: column;
-  }
-  form :global(select) {
-    background-color: var(--surface-2);
-  }
   .add-fields {
     display: flex;
     gap: var(--size-4);
     flex-direction: column;
     align-self: center;
     width: 100%;
-  }
-
-  button {
-    --btn-color: #000;
-    margin-block-start: var(--size-2);
-    background-color: var(--brand);
-    padding-block: var(--size-2);
-    border-radius: var(--radius-2);
-    color: var(--btn-color);
-    display: flex;
-    justify-content: center;
-    place-items: center;
-    gap: var(--size-2);
-
-    &:hover {
-      filter: brightness(0.9);
-    }
-    & > span {
-      font-size: var(--font-size-2);
-      font-weight: var(--font-weight-5);
-      filter: invert(1);
-    }
-  }
-
-  button:disabled {
-    cursor: not-allowed;
-    filter: none;
-    opacity: 0.5;
   }
 
   @media (min-width: 640px) {

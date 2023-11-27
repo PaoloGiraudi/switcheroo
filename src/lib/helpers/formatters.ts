@@ -5,3 +5,11 @@ export function capitalize(word: string): string {
 export function toCamelCase(name?: string) {
   return name?.split(' ').join('_').toLocaleLowerCase();
 }
+
+export const unwrap = (data: FormDataEntryValue | null | string) => {
+  const field = data?.toString().split('@') || [];
+  return {
+    unit: field[0],
+    name: field[1]
+  };
+};

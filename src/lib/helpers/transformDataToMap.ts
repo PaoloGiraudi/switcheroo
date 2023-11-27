@@ -8,7 +8,8 @@ export function transformDataToMap(data: AllMeasures) {
       Object.values(measureData.systems).flatMap((system) =>
         Object.keys(system).map((systemUnit) => {
           const unit: Unit | undefined = system[systemUnit as AllMeasuresUnits];
-          return { unit: systemUnit, name: unit?.name.singular || systemUnit };
+          // unit@name
+          return `${systemUnit}@${unit?.name.singular ?? systemUnit}`;
         })
       )
     ])

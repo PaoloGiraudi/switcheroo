@@ -1,19 +1,17 @@
-import { message, superValidate } from 'sveltekit-superforms/server';
-import { redirect, type Actions } from '@sveltejs/kit';
-import { toCamelCase } from '$lib/helpers/formatters';
+import { redirect, type Actions, fail } from '@sveltejs/kit';
+import { toCamelCase, unwrap } from '$lib/helpers/formatters';
 import { db } from '$lib/server/database.js';
 import { conversions, userToConversions } from '$lib/server/schema.js';
-import { addSchema } from './add-schema.js';
 import { eq } from 'drizzle-orm';
+import { Category, Measures, MeasuresMap } from '$lib/server/validators';
+import { z } from 'zod';
 
 type NewConversion = typeof conversions.$inferInsert;
 
 export const load = async ({ locals }) => {
   const session = await locals.auth.validate();
   if (!session) throw redirect(302, '/signup');
-  const form = await superValidate(addSchema);
-
-  return { form };
+  return {};
 };
 
 export const actions: Actions = {
@@ -24,15 +22,29 @@ export const actions: Actions = {
       return 'You need to login first';
     }
 
-    const form = await superValidate(request, addSchema);
-    const { data } = form;
+    const formData = await request.formData();
 
-    // Convenient validation check:
-    if (!form.valid || !data.left || !data.right) {
-      return message(form, 'Please check out the selection');
+    const form = addSchema.safeParse({
+      category: formData.get('category'),
+      right: {
+        name: unwrap(formData.get('right')).name,
+        unit: unwrap(formData.get('right')).unit
+      },
+      left: {
+        name: unwrap(formData.get('left')).name,
+        unit: unwrap(formData.get('left')).unit
+      }
+    });
+
+    if (!form.success) {
+      return fail(400, {
+        message: form.error.issues[0].message
+      });
     }
 
-    const key = `${toCamelCase(form.data.left?.name)}_to_${toCamelCase(form.data.right?.name)}`;
+    const { data } = form;
+
+    const key = `${toCamelCase(data.left?.name)}_to_${toCamelCase(data.right?.name)}`;
 
     try {
       const newConv: NewConversion = {
@@ -42,7 +54,7 @@ export const actions: Actions = {
         left: data.left.name,
         right: data.right.name
       };
-
+      // save conversion in db
       const insertedConversion = await db
         .insert(conversions)
         .values(newConv)
@@ -56,16 +68,46 @@ export const actions: Actions = {
             .from(conversions)
             .where(eq(conversions.key, newConv.key));
 
-      const result = await db.insert(userToConversions).values({
+      // save conversionId to user
+      await db.insert(userToConversions).values({
         conversionsId: conversionId[0].columnId,
         userId: session?.user.userId
       });
-
-      return result;
-    } catch (error) {
-      console.log(error);
+    } catch (e) {
+      return fail(500, {
+        message: 'An unknown error occurred'
+      });
     }
 
-    return { form };
+    throw redirect(302, '/dashboard');
   }
 };
+
+const addSchema = z
+  .object({
+    category: Category,
+    right: z.object({
+      name: z.string(),
+      unit: Measures
+    }),
+    left: z.object({
+      name: z.string(),
+      unit: Measures
+    })
+  })
+  .refine(
+    ({ category, right, left }) => {
+      if (!category) return false;
+
+      const allowed = MeasuresMap.get(category);
+      const isRightValid = allowed?.safeParse(right?.unit);
+      const isLeftValid = allowed?.safeParse(left?.unit);
+      const isDifferent = right?.unit !== left?.unit;
+
+      return isRightValid && isLeftValid && isDifferent;
+    },
+    {
+      message: 'Pick different units',
+      path: ['right', 'left']
+    }
+  );
