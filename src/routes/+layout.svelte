@@ -5,10 +5,11 @@
   import 'open-props/gray-oklch.min.css';
   import 'open-props/gray-hsl.min.css';
   import 'open-props/colors-oklch.min.css';
-  import '../app.css';
-  import Drawer from '../components/drawer.svelte';
-  import Info from '../components/info.svelte';
-  import ThemeSwitch from '../components/theme-switch.svelte';
+  import '../styles/reset.css';
+  import '../styles/app.css';
+  import { Navbar } from '../lib/components';
+  import type { LayoutData } from './$types';
+  export let data: LayoutData;
 </script>
 
 <svelte:head>
@@ -17,56 +18,35 @@
 </svelte:head>
 
 <div class="layout">
-  <div class="wip">
-    <p>Still under development!</p>
-  </div>
+  <Navbar user={data.username} />
   <main>
     <slot />
   </main>
-  <Drawer>
-    <ThemeSwitch />
-    <Info />
-  </Drawer>
-</div>
-<div data-display="desktop">
-  <ThemeSwitch />
-  <Info />
 </div>
 
 <style>
-  .wip {
-    display: flex;
-    padding: var(--size-4);
-    background-color: var(--orange-5);
-    justify-content: center;
-    margin-top: var(--size-1);
-    border-radius: var(--radius-2);
-  }
   .layout {
+    height: 100dvh;
     margin-inline: auto;
-    max-inline-size: var(--size-md);
-    overflow: hidden;
-    height: 100%;
     position: relative;
   }
   main {
-    margin: var(--size-2);
+    padding-block: var(--size-2);
     display: flex;
     flex-direction: column;
-  }
-  div[data-display='desktop'] {
-    display: none;
   }
 
   @media (min-width: 640px) {
     .layout {
-      max-inline-size: var(--size-xl);
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
     }
     main {
-      margin: var(--size-4);
-    }
-    div[data-display='desktop'] {
-      display: contents;
+      height: 100%;
+      padding-block-start: var(--size-6);
+      display: flex;
+      align-items: center;
     }
   }
 </style>

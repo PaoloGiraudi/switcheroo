@@ -1,9 +1,7 @@
 <script lang="ts">
-  import type { Def } from '../lib/definitions';
+  import type { Def } from '../types';
   import Input from './input.svelte';
-
   export let def: Def;
-
   let left: number | null = null;
   let right: number | null = null;
 
@@ -22,17 +20,24 @@
   };
 </script>
 
-<div>
+<div class="conversion-field">
   <Input name={def.left} on:input={setBothFromLeft} value={left} />
   <Input name={def.right} on:input={setBothFromRight} value={right} />
 </div>
 
 <style>
-  div {
+  .conversion-field {
+    margin-inline: var(--size-2);
     border: var(--border-size-1) solid var(--surface-2);
     overflow: hidden;
     border-radius: var(--radius-2);
     display: flex;
     box-shadow: var(--shadow-2);
+  }
+
+  @media (min-width: 640px) {
+    .conversion-field {
+      margin-inline: 0;
+    }
   }
 </style>
