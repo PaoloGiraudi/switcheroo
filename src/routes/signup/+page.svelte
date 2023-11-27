@@ -4,7 +4,7 @@
   $: message = $page?.form?.message;
 </script>
 
-<Card title="Create an account today!" sub="And start using Switcheroo!">
+<Card title="Create an account today!">
   <Form button="Sign up">
     <Login />
   </Form>
