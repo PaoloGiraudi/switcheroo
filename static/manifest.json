@@ -1,9 +1,9 @@
 {
-  "id": "0.1.5",
+  "id": "1.0.0",
   "name": "Switcheroo",
   "short_name": "Switcheroo",
   "description": "Convert your life to easy",
-  "version": "0.1.5",
+  "version": "1.0.0",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",

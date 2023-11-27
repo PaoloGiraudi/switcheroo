@@ -5,11 +5,10 @@
   import 'open-props/gray-oklch.min.css';
   import 'open-props/gray-hsl.min.css';
   import 'open-props/colors-oklch.min.css';
-  import '../styles/app.css';
   import '../styles/reset.css';
+  import '../styles/app.css';
   import { Navbar } from '../lib/components';
   import type { LayoutData } from './$types';
-  import SlidingText from '$lib/components/sliding-text.svelte';
   export let data: LayoutData;
 </script>
 
