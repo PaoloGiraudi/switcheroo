@@ -1,10 +1,12 @@
 <script lang="ts">
+  import { capitalize } from '$lib/helpers/formatters';
+
   export let name: string;
   export let value: number | null;
 </script>
 
 <div>
-  <label for={name}>{name}</label>
+  <label for={name}>{capitalize(name)}</label>
   <input {name} {value} id={name} inputmode="numeric" min="0" type="number" on:input />
 </div>
 

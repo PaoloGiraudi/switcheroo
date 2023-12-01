@@ -2,6 +2,7 @@
   import { applyAction, enhance } from '$app/forms';
   import Spinner from '$lib/icons/spinner.svelte';
   import type { SubmitFunction } from '@sveltejs/kit';
+  export let action: string | undefined;
   export let button: string | null = 'Submit';
   export let disabled: boolean | undefined = false;
   $: submitting = false;
@@ -15,7 +16,7 @@
   };
 </script>
 
-<form method="POST" use:enhance={onSubmit}>
+<form method="post" use:enhance={onSubmit} {action}>
   <slot />
   <button type="submit" disabled={disabled || submitting}>
     <span>{button}</span>
