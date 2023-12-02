@@ -6,5 +6,3 @@ export const load: PageServerLoad = async ({ locals }) => {
   if (session) throw redirect(302, '/dashboard');
   return {};
 };
-
-export const prerender = true;
