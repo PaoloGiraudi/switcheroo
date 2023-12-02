@@ -2,17 +2,12 @@
   import ConversionField from './conversion-field.svelte';
   import type { Def } from '$lib/types';
   import CurvedArrow from '$lib/icons/curved-arrow.svelte';
-  import configMeasurements, { length } from 'convert-units';
-
-  const convert = configMeasurements({
-    length
-  });
 
   const def: Def = {
     left: 'Meters',
     right: 'Feets',
-    setFromLeft: (value: string) => +convert(+value).from('m').to('ft').toFixed(2),
-    setFromRight: (value: string) => +convert(+value).from('ft').to('m').toFixed(2)
+    setFromLeft: (value: string) => +(+value * 3.281).toFixed(2),
+    setFromRight: (value: string) => +(+value / 3.281).toFixed(2)
   };
 </script>
 

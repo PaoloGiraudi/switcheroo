@@ -2,20 +2,14 @@ import { redirect, type Actions, fail } from '@sveltejs/kit';
 import { toCamelCase, unwrap } from '$lib/helpers/formatters';
 import { db } from '$lib/server/database.js';
 import { conversions, userToConversions } from '$lib/server/schema.js';
-import { eq } from 'drizzle-orm';
-import { Category, Measures, MeasuresMap } from '$lib/server/validators';
-import { z } from 'zod';
+import { eq, and } from 'drizzle-orm';
+import { deleteSchema } from './delete/schema.js';
+import { addSchema } from './add/schema.js';
 
 type NewConversion = typeof conversions.$inferInsert;
 
-export const load = async ({ locals }) => {
-  const session = await locals.auth.validate();
-  if (!session) throw redirect(302, '/signup');
-  return {};
-};
-
 export const actions: Actions = {
-  default: async ({ request, locals }) => {
+  add: async ({ request, locals }) => {
     const session = await locals.auth.validate();
 
     if (!session) {
@@ -75,39 +69,46 @@ export const actions: Actions = {
       });
     } catch (e) {
       return fail(500, {
+        e,
         message: 'An unknown error occurred'
       });
     }
 
     throw redirect(302, '/dashboard');
+  },
+  delete: async ({ request, locals }) => {
+    const session = await locals.auth.validate();
+
+    if (!session) {
+      return 'You need to login first';
+    }
+
+    const formData = await request.formData();
+    const form = deleteSchema.safeParse({
+      id: Number(formData.get('id'))
+    });
+
+    if (!form.success) {
+      return fail(400, {
+        message: form.error.issues[0].message
+      });
+    }
+    try {
+      await db
+        .delete(userToConversions)
+        .where(
+          and(
+            eq(userToConversions.userId, session.user.userId),
+            eq(userToConversions.conversionsId, form.data.id)
+          )
+        )
+        .returning();
+    } catch (e) {
+      return fail(500, {
+        e,
+        message: 'An unknown error occurred'
+      });
+    }
+    return { success: true };
   }
 };
-
-const addSchema = z
-  .object({
-    category: Category,
-    right: z.object({
-      name: z.string(),
-      unit: Measures
-    }),
-    left: z.object({
-      name: z.string(),
-      unit: Measures
-    })
-  })
-  .refine(
-    ({ category, right, left }) => {
-      if (!category) return false;
-
-      const allowed = MeasuresMap.get(category);
-      const isRightValid = allowed?.safeParse(right?.unit);
-      const isLeftValid = allowed?.safeParse(left?.unit);
-      const isDifferent = right?.unit !== left?.unit;
-
-      return isRightValid && isLeftValid && isDifferent;
-    },
-    {
-      message: 'Pick different units',
-      path: ['right', 'left']
-    }
-  );

@@ -1,8 +1,7 @@
 <script lang="ts">
-  import type { PageData } from '../$types';
   import { ConversionField } from '$lib/components';
   import Plus from '$lib/icons/plus.svelte';
-  export let data: PageData;
+  export let data;
 </script>
 
 <div class="fields">
@@ -12,7 +11,7 @@
 </div>
 
 {#if data.userId}
-  <a href="/add" class="add-button">
+  <a href="/dashboard/manage" class="add-button">
     <Plus />
   </a>
 {/if}

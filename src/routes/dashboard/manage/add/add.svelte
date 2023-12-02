@@ -17,7 +17,7 @@
 </script>
 
 <Card title="Add a new conversion">
-  <Form disabled={!category || !left || !right}>
+  <Form disabled={!category || !left || !right} action="/dashboard/manage?/add">
     <div class="add-fields">
       <Select
         on:change={() => (left = right = null)}

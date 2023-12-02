@@ -2,11 +2,12 @@ import configMeasurements, { allMeasures } from 'convert-units';
 import type { PageLoad } from './$types';
 import type { Def } from '$lib/types';
 
-export const load: PageLoad = async ({ data }) => {
+export const load: PageLoad = async ({ parent }) => {
   const convert = configMeasurements(allMeasures);
   const conversions = new Map<string, Def>();
+  const { userToConversions } = await parent();
 
-  data.result?.userToConversions.forEach((item) => {
+  userToConversions?.forEach((item) => {
     const { left, right, left_unit, right_unit } = item.conversions;
     const name = `${left}To${right}`;
     const def: Def = {
