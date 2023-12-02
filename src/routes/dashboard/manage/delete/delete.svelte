@@ -60,7 +60,7 @@
   button {
     background-color: transparent;
     &:hover {
-      color: var(--red-5);
+      color: var(--brand);
     }
   }
   @media (min-width: 640px) {
