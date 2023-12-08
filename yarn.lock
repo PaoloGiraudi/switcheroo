@@ -1193,17 +1193,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sveltejs/adapter-auto@npm:^2.1.1":
-  version: 2.1.1
-  resolution: "@sveltejs/adapter-auto@npm:2.1.1"
-  dependencies:
-    import-meta-resolve: "npm:^4.0.0"
-  peerDependencies:
-    "@sveltejs/kit": ^1.0.0
-  checksum: cf3bf339732c2567a1cb183914ad5c7cce19c91b3d74fee3da70b24d63eb73eb858c25f9fffe150c2ea607f28d5097c6995e298e87d7b4b9482067dc7233713f
-  languageName: node
-  linkType: hard
-
 "@sveltejs/adapter-vercel@npm:^3.1.0":
   version: 3.1.0
   resolution: "@sveltejs/adapter-vercel@npm:3.1.0"
@@ -3483,13 +3472,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"import-meta-resolve@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "import-meta-resolve@npm:4.0.0"
-  checksum: 709375e01f8c3a87b7870991ca29c630d71bb7e22b7bb0f622613173d87b41b4043b4a983800e6d38ab3867496a46f82d30df0cbc2e55792c91c23193eea67a1
-  languageName: node
-  linkType: hard
-
 "imurmurhash@npm:^0.1.4":
   version: 0.1.4
   resolution: "imurmurhash@npm:0.1.4"
@@ -5308,7 +5290,6 @@ __metadata:
   dependencies:
     "@libsql/client": "npm:^0.3.6"
     "@lucia-auth/adapter-sqlite": "npm:^2.0.1"
-    "@sveltejs/adapter-auto": "npm:^2.1.1"
     "@sveltejs/adapter-vercel": "npm:^3.1.0"
     "@sveltejs/kit": "npm:^1.27.6"
     "@types/convert-units": "npm:^2.3.9"
