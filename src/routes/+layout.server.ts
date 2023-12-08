@@ -8,5 +8,3 @@ export const load: LayoutServerLoad = async ({ locals }) => {
     username: session?.user.username
   };
 };
-
-export const ssr = false;

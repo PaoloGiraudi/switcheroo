@@ -1,12 +1,10 @@
 <script lang="ts">
   import { options } from '$lib/stores/options';
-  import { allMeasures } from 'convert-units';
   import { Card, Select } from '$lib/components';
   import Form from '$lib/components/form/form.svelte';
   import { page } from '$app/stores';
   import Message from '$lib/components/form/message.svelte';
-
-  const measures = Object.keys(allMeasures);
+  import { convert } from '$lib/stores/convert';
 
   let category: string | null = null;
   let left: string | null = null;
@@ -22,7 +20,7 @@
       <Select
         on:change={() => (left = right = null)}
         bind:value={category}
-        options={measures}
+        options={$convert().measures()}
         label="Category"
         name="category"
         placeholder="Speed, temperature..."
