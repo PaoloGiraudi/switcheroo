@@ -1,9 +1,7 @@
 /// <reference types="@sveltejs/kit" />
-/// <reference no-default-lib="true"/>
-/// <reference lib="esnext" />
 /// <reference lib="webworker" />
 
-const sw = self as unknown as ServiceWorkerGlobalScope;
+declare let self: ServiceWorkerGlobalScope;
 
 import { build, files, version } from '$service-worker';
 
@@ -11,7 +9,7 @@ const CACHE = `cache-${version}`;
 
 const ASSETS = [...build, ...files];
 
-sw.addEventListener('install', (event) => {
+self.addEventListener('install', (event) => {
   async function addFilesToCache() {
     const cache = await caches.open(CACHE);
     await cache.addAll(ASSETS);
@@ -20,7 +18,7 @@ sw.addEventListener('install', (event) => {
   event.waitUntil(addFilesToCache());
 });
 
-sw.addEventListener('activate', (event) => {
+self.addEventListener('activate', (event) => {
   async function deleteOldCaches() {
     for (const key of await caches.keys()) {
       if (key !== CACHE) await caches.delete(key);
@@ -30,15 +28,19 @@ sw.addEventListener('activate', (event) => {
   event.waitUntil(deleteOldCaches());
 });
 
-sw.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
+  if (!(event.request.url.indexOf('http') === 0)) return;
 
   async function respond() {
     const url = new URL(event.request.url);
     const cache = await caches.open(CACHE);
 
     if (ASSETS.includes(url.pathname)) {
-      return cache.match(event.request);
+      const cachedResponse = await cache.match(url.pathname);
+      if (cachedResponse) {
+        return cachedResponse;
+      }
     }
 
     try {
@@ -50,9 +52,13 @@ sw.addEventListener('fetch', (event) => {
 
       return response;
     } catch {
-      return cache.match(event.request);
+      const cachedResponse = await cache.match(url.pathname);
+      if (cachedResponse) {
+        return cachedResponse;
+      }
     }
+    return new Response('Not found', { status: 404 });
   }
 
-  event.respondWith(respond() as Response | PromiseLike<Response>);
+  event.respondWith(respond());
 });
