@@ -11,9 +11,8 @@
   export let userConversions: { conversions: Conversion }[];
 
   const onSubmit: SubmitFunction = () => {
-    return async ({ result, formElement }) => {
+    return async ({ result }) => {
       if (result.type === 'success') {
-        formElement.remove();
         await invalidateAll();
       }
       await applyAction(result);
