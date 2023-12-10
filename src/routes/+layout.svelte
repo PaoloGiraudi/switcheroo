@@ -17,8 +17,8 @@
 </div>
 
 <style>
-  @import '@fontsource/rubik/400.css';
-  @import '@fontsource/rubik/500.css';
+  @import '@fontsource/rubik/latin-400.css';
+  @import '@fontsource/rubik/latin-500.css';
   @import 'open-props/fonts.min.css';
   @import 'open-props/borders.min.css';
   @import 'open-props/gradients.min.css';
