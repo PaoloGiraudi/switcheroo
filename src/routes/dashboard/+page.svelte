@@ -40,7 +40,7 @@
     display: grid;
     place-items: center;
     height: var(--size-fluid-5);
-    aspect-ratio: var(--ratio-square);
+    aspect-ratio: 1;
     background-color: var(--brand);
     box-shadow: var(--shadow-4);
     border-radius: var(--radius-2);

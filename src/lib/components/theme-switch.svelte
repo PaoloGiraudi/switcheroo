@@ -20,7 +20,7 @@
     background-color: transparent;
     display: grid;
     place-items: center;
-    aspect-ratio: var(--ratio-square);
+    aspect-ratio: 1;
     border-radius: var(--radius-2);
   }
 </style>
