@@ -41,7 +41,7 @@
     display: grid;
     place-items: center;
     height: var(--size-fluid-5);
-    aspect-ratio: var(--ratio-square);
+    aspect-ratio: 1;
     position: absolute;
     background: var(--background);
     box-shadow: var(--shadow-2);

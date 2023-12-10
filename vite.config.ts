@@ -3,6 +3,10 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [sveltekit()],
+  build: {
+    minify: true,
+    cssMinify: true
+  },
   ssr: {
     noExternal: ['convert-units']
   }
