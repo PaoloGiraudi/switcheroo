@@ -11,7 +11,9 @@ const pkg = JSON.parse(json);
 const config = {
   preprocess: vitePreprocess(),
   kit: {
-    adapter: adapter(),
+    adapter: adapter({
+      runtime: 'edge'
+    }),
     version: {
       name: pkg.version
     },
