@@ -2,7 +2,7 @@
   import { applyAction, enhance } from '$app/forms';
   import Spinner from '$lib/icons/spinner.svelte';
   import type { SubmitFunction } from '@sveltejs/kit';
-  export let action: string | undefined;
+  export let action: string | undefined = undefined;
   export let button: string | null = 'Submit';
   export let disabled: boolean | undefined = false;
   $: submitting = false;

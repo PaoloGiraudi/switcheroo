@@ -3,6 +3,9 @@
 /// <reference types="lucia" />
 declare global {
   namespace App {
+    interface PageState {
+      page: string | null;
+    }
     interface Locals {
       auth: import('lucia').AuthRequest;
     }

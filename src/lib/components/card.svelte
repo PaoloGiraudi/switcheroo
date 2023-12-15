@@ -13,7 +13,7 @@
 
 <style>
   .card {
-    background-color: var(--background);
+    background-color: var(--surface-1);
     display: flex;
     flex-direction: column;
     padding: var(--size-4);
@@ -27,7 +27,7 @@
     font-size: var(--font-size-2);
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 50rem) {
     .card {
       border-radius: var(--radius-2);
       border: var(--border-size-1) solid var(--surface-2);

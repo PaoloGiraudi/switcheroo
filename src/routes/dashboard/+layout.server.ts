@@ -4,7 +4,7 @@ import { db } from '$lib/server/database';
 
 export const load: LayoutServerLoad = async ({ locals }) => {
   const session = await locals.auth.validate();
-  if (!session) throw redirect(302, '/signup');
+  if (!session) redirect(302, '/signup');
 
   const prepared = db.query.user
     .findFirst({

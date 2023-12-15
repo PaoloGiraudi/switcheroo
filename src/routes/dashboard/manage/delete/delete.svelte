@@ -47,8 +47,6 @@
     border: var(--border-size-1) solid var(--surface-2);
     padding: var(--size-2);
     padding-inline-start: var(--size-4);
-
-    box-shadow: var(--shadow-2);
   }
   span {
     font-size: var(--font-size-3);
@@ -62,7 +60,7 @@
       color: var(--brand);
     }
   }
-  @media (min-width: 640px) {
+  @media (min-width: 50rem) {
     div {
       padding: 0;
     }

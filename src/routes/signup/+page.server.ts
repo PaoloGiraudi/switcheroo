@@ -5,7 +5,7 @@ import { LibsqlError } from '@libsql/client';
 
 export const load: PageServerLoad = async ({ locals }) => {
   const session = await locals.auth.validate();
-  if (session) throw redirect(302, '/');
+  if (session) redirect(302, '/');
   return {};
 };
 
@@ -42,7 +42,6 @@ export const actions: Actions = {
       });
       locals.auth.setSession(session); // set session cookie
     } catch (e) {
-      console.log(e);
       // check for unique constraint error in user table
       if (e instanceof LibsqlError && e?.code === 'SQLITE_CONSTRAINT') {
         return fail(400, {
@@ -55,6 +54,6 @@ export const actions: Actions = {
     }
     // redirect to
     // make sure you don't throw inside a try/catch block!
-    throw redirect(302, '/dashboard');
+    redirect(302, '/dashboard');
   }
 };

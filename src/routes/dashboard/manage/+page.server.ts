@@ -74,7 +74,7 @@ export const actions: Actions = {
       });
     }
 
-    throw redirect(302, '/dashboard');
+    redirect(302, '/dashboard');
   },
   delete: async ({ request, locals }) => {
     const session = await locals.auth.validate();

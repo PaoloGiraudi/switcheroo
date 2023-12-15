@@ -16,7 +16,7 @@
     width: 50%;
     display: flex;
     flex-direction: column;
-    background-color: var(--background);
+    background-color: var(--surface-1);
   }
 
   input {
@@ -24,7 +24,7 @@
     height: var(--size-fluid-5);
     font-size: var(--font-size-fluid-3);
     padding-inline-start: var(--size-fluid-1);
-    background-color: var(--background);
+    background-color: var(--surface-1);
     border-bottom: var(--border-size-2) solid transparent;
     border-radius: 0;
   }
