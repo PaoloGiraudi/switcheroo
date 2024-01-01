@@ -37,6 +37,8 @@
 
 <style>
   dialog {
+    border-radius: var(--radius-2);
+    box-shadow: var(--shadow-3);
     position: relative;
     padding: 0;
     width: 100%;
@@ -46,6 +48,7 @@
   }
 
   button {
+    background-color: var(--surface-1);
     padding-inline: 0;
     position: absolute;
     right: var(--size-3);
