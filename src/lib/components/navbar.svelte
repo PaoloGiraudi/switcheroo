@@ -22,8 +22,12 @@
         <button class="button-link">Logout</button>
       </form>
     {:else}
-      <a class="button-link" data-type="ghost" href="/signup" on:click={handleClick}>Sign up</a>
-      <a class="button-link" href="/login" on:click={handleClick}>Login</a>
+      <button class="button-link" data-type="ghost">
+        <a href="/signup" on:click={handleClick}>Sign up</a>
+      </button>
+      <button class="button-link">
+        <a href="/login" on:click={handleClick}>Login</a>
+      </button>
     {/if}
     <ThemeSwitch />
   </div>
@@ -47,6 +51,7 @@
   }
 
   .right {
+    align-items: center;
     display: flex;
     gap: var(--size-2);
   }
@@ -65,12 +70,19 @@
     display: grid;
     place-items: center;
     font-weight: 500;
-    padding-inline: var(--size-4);
+    padding-block: var(--size-1);
     border-radius: var(--radius-2);
     border: var(--border-size-1) solid var(--brand);
     background-color: var(--surface-1);
     color: var(--text-1);
-    margin-block: 0;
+    width: var(--size-10);
+
+    &:has(a) {
+      & > a {
+        width: 100%;
+        padding-block: var(--size-1);
+      }
+    }
 
     &:hover {
       background-color: var(--surface-2);

@@ -35,7 +35,7 @@
   }
   label {
     color: var(--text-1);
-    font-weight: var(--font-weight-4);
+    font-weight: 400;
     font-size: var(--font-size-fluid-1);
     padding-inline-start: var(--size-fluid-1);
   }

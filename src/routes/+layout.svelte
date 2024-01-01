@@ -1,6 +1,6 @@
 <script lang="ts">
-  import '@fontsource/rubik/latin-400.css';
-  import '@fontsource/rubik/latin-500.css';
+  import '@fontsource/poppins/latin-400.css';
+  import '@fontsource/poppins/latin-500.css';
   import '../styles/reset.css';
   import '../styles/app.css';
   import { Modal, Navbar } from '$lib/components';

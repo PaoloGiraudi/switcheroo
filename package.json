@@ -16,7 +16,7 @@
     "migrate": "tsx ./src/lib/server/migrate.ts"
   },
   "devDependencies": {
-    "@fontsource/rubik": "^5.0.18",
+    "@fontsource/poppins": "^5.0.8",
     "@libsql/client": "^0.4.0-pre.5",
     "@lucia-auth/adapter-sqlite": "^2.0.1",
     "@sveltejs/adapter-vercel": "^4.0.3",

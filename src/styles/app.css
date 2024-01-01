@@ -2,7 +2,7 @@
 
 :root {
   /* font */
-  --font-sans: 'Rubik', sans-serif;
+  --font-sans: 'Poppins', sans-serif;
 
   /* dark */
   --brand-dark: var(--red-10);

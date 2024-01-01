@@ -52,7 +52,7 @@
     }
     & > span {
       font-size: var(--font-size-2);
-      font-weight: var(--font-weight-5);
+      font-weight: 500;
       filter: invert(1);
     }
   }

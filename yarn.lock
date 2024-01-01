@@ -870,10 +870,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource/rubik@npm:^5.0.18":
-  version: 5.0.18
-  resolution: "@fontsource/rubik@npm:5.0.18"
-  checksum: 439e823be4c85308d433ad1ecbc02b980e897c132471914962ceec617456376bd7d7382e372081048ea2a537adcf9de6314442ec7b645b7285c3aba2d6bea345
+"@fontsource/poppins@npm:^5.0.8":
+  version: 5.0.8
+  resolution: "@fontsource/poppins@npm:5.0.8"
+  checksum: 7eb0626ec3cb99f7d2a9576a615d4229ec4bcec302a30a3005ecd1dfd7ab77c95e0963642a9f71e2166d076cd8c69aaf8d00f27cc55764d09b510c30d0b95fed
   languageName: node
   linkType: hard
 
@@ -5093,7 +5093,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "switcheroo@workspace:."
   dependencies:
-    "@fontsource/rubik": "npm:^5.0.18"
+    "@fontsource/poppins": "npm:^5.0.8"
     "@libsql/client": "npm:^0.4.0-pre.5"
     "@lucia-auth/adapter-sqlite": "npm:^2.0.1"
     "@sveltejs/adapter-vercel": "npm:^4.0.3"
