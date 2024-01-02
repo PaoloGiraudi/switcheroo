@@ -34,7 +34,7 @@
     font-weight: 500;
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 50rem) {
     .try-out {
       margin-top: 0;
       gap: var(--size-8);

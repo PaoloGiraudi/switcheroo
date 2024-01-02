@@ -1,10 +1,8 @@
 <script lang="ts">
-  import { options } from '$lib/stores/options';
-  import { Card, Select } from '$lib/components';
-  import Form from '$lib/components/form/form.svelte';
+  import { Card, Form, Message, Select } from '$lib/components';
   import { page } from '$app/stores';
-  import Message from '$lib/components/form/message.svelte';
   import { convert } from '$lib/stores/convert';
+  import { options } from '$lib/stores/options';
 
   let category: string | null = null;
   let left: string | null = null;
@@ -57,7 +55,7 @@
     width: 100%;
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 50rem) {
     .add-fields {
       display: grid;
       grid-template-columns: 1fr 1fr;

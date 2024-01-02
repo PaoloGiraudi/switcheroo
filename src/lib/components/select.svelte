@@ -30,5 +30,6 @@
   select {
     padding-block: var(--size-2);
     font-size: var(--font-size-2);
+    background-color: var(--surface-2);
   }
 </style>

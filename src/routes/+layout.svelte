@@ -1,7 +1,38 @@
 <script lang="ts">
-  import { Navbar } from '../lib/components';
+  import '@fontsource/poppins/latin-400.css';
+  import '@fontsource/poppins/latin-500.css';
+  import '../styles/reset.css';
+  import '../styles/app.css';
+  import { Modal, Navbar } from '$lib/components';
   import type { LayoutData } from './$types';
+  import { goto, preloadData, pushState } from '$app/navigation';
+  import LoginPage from './login/+page.svelte';
+  import SignupPage from './signup/+page.svelte';
+  import { page } from '$app/stores';
+
   export let data: LayoutData;
+  let open = false;
+
+  async function onClick(e: MouseEvent & { currentTarget: HTMLAnchorElement }) {
+    if (e.metaKey || e.ctrlKey) return;
+    e.preventDefault();
+
+    const { href, pathname } = e.currentTarget;
+
+    const result = await preloadData(href);
+
+    if (result.type === 'loaded' && result.status === 200) {
+      pushState(href, { page: pathname });
+    } else {
+      goto(href);
+    }
+  }
+
+  $: if ($page.state.page) {
+    open = true;
+  } else {
+    open = false;
+  }
 </script>
 
 <svelte:head>
@@ -10,27 +41,21 @@
 </svelte:head>
 
 <div class="layout">
-  <Navbar user={data.username} />
+  <Navbar user={data.username} handleClick={onClick}></Navbar>
   <main>
     <slot />
   </main>
 </div>
 
-<style>
-  @import '@fontsource/rubik/latin-400.css';
-  @import '@fontsource/rubik/latin-500.css';
-  @import 'open-props/fonts.min.css';
-  @import 'open-props/borders.min.css';
-  @import 'open-props/gradients.min.css';
-  @import 'open-props/sizes.min.css';
-  @import 'open-props/normalize';
-  @import 'open-props/oklch-hues';
-  @import 'open-props/gray-oklch.min.css';
-  @import 'open-props/gray-hsl.min.css';
-  @import 'open-props/colors-oklch.min.css';
-  @import '../styles/reset.css';
-  @import '../styles/app.css';
+<Modal {open}>
+  {#if $page.state.page === '/login'}
+    <LoginPage />
+  {:else if $page.state.page === '/signup'}
+    <SignupPage />
+  {/if}
+</Modal>
 
+<style>
   .layout {
     height: 100dvh;
     margin-inline: auto;
@@ -42,7 +67,7 @@
     flex-direction: column;
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 50rem) {
     .layout {
       display: flex;
       justify-content: center;

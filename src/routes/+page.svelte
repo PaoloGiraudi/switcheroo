@@ -1,6 +1,5 @@
 <script lang="ts">
-  import SlidingText from '$lib/components/sliding-text.svelte';
-  import TryItOut from '$lib/components/try-it-out.svelte';
+  import { TryItOut } from '$lib/components';
 </script>
 
 <div class="landing">
@@ -9,9 +8,8 @@
     <header>
       <h1>Convert <span>anything</span>, <span>anytime</span>, <span>anywhere</span>.</h1>
       <p>
-        Switcheroo is a free friend allowing you to seamlessly convert various units and
-        measurements. Customize your dashboard to keep your most frequently used conversions at your
-        fingertips!
+        Switcheroo is your trusted ally for effortless unit and measurement conversions, all for
+        free. Customize your dashboard to keep your favorite conversions at your fingertips!
       </p>
       <div class="cta">
         <a href="/signup">
@@ -23,7 +21,6 @@
     <TryItOut />
   </div>
 </div>
-<SlidingText />
 
 <style>
   .landing {
@@ -95,7 +92,7 @@
     font-size: var(--font-size-2);
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 50rem) {
     .top-screen {
       flex-direction: row;
     }

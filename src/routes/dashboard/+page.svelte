@@ -24,7 +24,7 @@
     gap: var(--size-2);
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 50rem) {
     .fields {
       max-inline-size: var(--size-xl);
       gap: var(--size-4);

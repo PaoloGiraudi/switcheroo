@@ -15,7 +15,7 @@
     flex-direction: column;
     & label {
       font-size: var(--font-size-1);
-      font-weight: var(--font-weight-5);
+      font-weight: 500;
     }
   }
 </style>

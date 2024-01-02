@@ -32,10 +32,9 @@
     overflow: hidden;
     border-radius: var(--radius-2);
     display: flex;
-    box-shadow: var(--shadow-2);
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 50rem) {
     .conversion-field {
       margin-inline: 0;
     }

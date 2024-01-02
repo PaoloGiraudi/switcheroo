@@ -22,7 +22,7 @@
     transform: rotate(-90deg);
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 50rem) {
     svg {
       margin-left: var(--size-6);
       color: var(--text-1);

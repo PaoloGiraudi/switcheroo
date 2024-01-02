@@ -1,28 +1,26 @@
-html {
+@import 'open-props/normalize.min.css';
+
+:root {
   /* font */
-  --font-sans: 'Rubik', sans-serif;
-  --color-hue: var(--hue-red);
-  --shadow-color: var(--gray-12-hsl);
+  --font-sans: 'Poppins', sans-serif;
 
   /* dark */
-  --brand-dark: var(--color-8);
+  --brand-dark: var(--red-10);
   --warning-dark: var(--yellow-4);
   --text-1-dark: var(--gray-1);
   --text-2-dark: var(--gray-2);
-  --surface-1-dark: var(--gray-13);
-  --surface-2-dark: var(--gray-11);
-  --background-dark: var(--gray-13);
+  --surface-1-dark: var(--gray-9);
+  --surface-2-dark: var(--gray-8);
   --shadow-strength-dark: 40%;
   --blob-dark: var(--gradient-1);
 
   /* light */
-  --brand-light: var(--color-7);
+  --brand-light: var(--red-9);
   --warning-light: var(--orange-4);
   --text-1-light: var(--gray-13);
   --text-2-light: var(--gray-10);
-  --surface-1-light: var(--gray-2);
-  --surface-2-light: var(--gray-2);
-  --background-light: var(--gray-1);
+  --surface-1-light: var(--stone-2);
+  --surface-2-light: var(--stone-4);
   --shadow-strength-light: 1%;
   --blob-light: var(--gradient-25);
 }
@@ -36,7 +34,6 @@ html {
   --text-2: var(--text-2-dark);
   --surface-1: var(--surface-1-dark);
   --surface-2: var(--surface-2-dark);
-  --background: var(--background-dark);
   --shadow-strength: var(--shadow-strength-dark);
   --blob: var(--blob-dark);
 }
@@ -51,7 +48,6 @@ html {
     --text-2: var(--text-2-light);
     --surface-1: var(--surface-1-light);
     --surface-2: var(--surface-2-light);
-    --background: var(--background-light);
     --shadow-strength: var(--shadow-strength-light);
     --blob: var(--blob-light);
   }
@@ -66,7 +62,6 @@ html {
   --text-2: var(--text-2-dark);
   --surface-1: var(--surface-1-dark);
   --surface-2: var(--surface-2-dark);
-  --background: var(--background-dark);
   --shadow-strength: var(--shadow-strength-dark);
   --blob: var(--blob-dark);
 }
@@ -80,7 +75,6 @@ html {
   --text-2: var(--text-2-light);
   --surface-1: var(--surface-1-light);
   --surface-2: var(--surface-2-light);
-  --background: var(--background-light);
   --shadow-strength: var(--shadow-strength-light);
   --blob: var(--blob-light);
 }
@@ -89,8 +83,9 @@ html {
   --font-size-9: 4rem;
   color: var(--text-1);
   accent-color: var(--brand);
-  background-color: var(--background);
+  background-color: var(--surface-1);
   background-attachment: fixed;
+  font-family: var(--font-sans);
 }
 
 body,

@@ -4,6 +4,7 @@
   import Back from '$lib/icons/back.svelte';
   import ThemeSwitch from './theme-switch.svelte';
   export let user: string | undefined;
+  export let handleClick: (e: MouseEvent & { currentTarget: HTMLAnchorElement }) => Promise<void>;
 </script>
 
 <nav>
@@ -21,12 +22,8 @@
         <button class="button-link">Logout</button>
       </form>
     {:else}
-      <div class="button-link" data-type="ghost">
-        <a href="/signup">Sign up</a>
-      </div>
-      <div class="button-link">
-        <a href="/login">Login</a>
-      </div>
+      <a class="button-link" data-type="ghost" href="/signup" on:click={handleClick}>Sign up</a>
+      <a class="button-link" href="/login" on:click={handleClick}>Login</a>
     {/if}
     <ThemeSwitch />
   </div>
@@ -42,7 +39,7 @@
     padding-inline-start: var(--size-6);
     position: sticky;
     top: 0;
-    background-color: var(--background);
+    background-color: var(--surface-1);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,12 +47,9 @@
   }
 
   .right {
+    align-items: center;
     display: flex;
-    gap: var(--size-2);
-  }
-
-  .right :global(button) {
-    margin-inline-start: var(--size-2);
+    gap: var(--size-3);
   }
 
   .welcome {
@@ -65,33 +59,32 @@
   }
 
   .button-link {
-    display: grid;
-    place-items: center;
-    padding-inline: var(--size-4);
-    padding-block: var(--size-1);
+    display: inline-block;
     font-weight: 500;
+    padding-block: var(--size-1);
     border-radius: var(--radius-2);
     border: var(--border-size-1) solid var(--brand);
-    background-color: var(--background);
+    background-color: var(--surface-1);
+    color: var(--text-1);
+    width: var(--size-10);
+    text-align: center;
+    color: var(--text-1);
 
     &:hover {
       background-color: var(--surface-2);
     }
 
-    & > a {
-      color: var(--text-1);
+    &[data-type='ghost'] {
+      background-color: transparent;
+      border: var(--border-size-1) solid transparent;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
-  .button-link[data-type='ghost'] {
-    background-color: transparent;
-    border: var(--border-size-1) solid transparent;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  @media (min-width: 640px) {
+  @media (min-width: 50rem) {
     .welcome {
       display: block;
     }

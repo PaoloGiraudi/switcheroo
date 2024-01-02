@@ -1,5 +1,5 @@
 import adapter from '@sveltejs/adapter-vercel';
-import { vitePreprocess } from '@sveltejs/kit/vite';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 
@@ -9,15 +9,15 @@ const pkg = JSON.parse(json);
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-  preprocess: vitePreprocess(),
+  preprocess: [vitePreprocess({})],
   kit: {
     adapter: adapter({
       runtime: 'edge'
     }),
     version: {
       name: pkg.version
-    },
-  },
+    }
+  }
 };
 
 export default config;
