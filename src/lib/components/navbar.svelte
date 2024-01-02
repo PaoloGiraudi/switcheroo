@@ -22,12 +22,8 @@
         <button class="button-link">Logout</button>
       </form>
     {:else}
-      <button class="button-link" data-type="ghost">
-        <a href="/signup" on:click={handleClick}>Sign up</a>
-      </button>
-      <button class="button-link">
-        <a href="/login" on:click={handleClick}>Login</a>
-      </button>
+      <a class="button-link" data-type="ghost" href="/signup" on:click={handleClick}>Sign up</a>
+      <a class="button-link" href="/login" on:click={handleClick}>Login</a>
     {/if}
     <ThemeSwitch />
   </div>
@@ -53,11 +49,7 @@
   .right {
     align-items: center;
     display: flex;
-    gap: var(--size-2);
-  }
-
-  .right :global(button) {
-    margin-inline-start: var(--size-2);
+    gap: var(--size-3);
   }
 
   .welcome {
@@ -67,8 +59,7 @@
   }
 
   .button-link {
-    display: grid;
-    place-items: center;
+    display: inline-block;
     font-weight: 500;
     padding-block: var(--size-1);
     border-radius: var(--radius-2);
@@ -76,24 +67,20 @@
     background-color: var(--surface-1);
     color: var(--text-1);
     width: var(--size-10);
-
-    &:has(a) {
-      & > a {
-        width: 100%;
-        padding-block: var(--size-1);
-      }
-    }
+    text-align: center;
+    color: var(--text-1);
 
     &:hover {
       background-color: var(--surface-2);
     }
-  }
 
-  .button-link[data-type='ghost'] {
-    background-color: transparent;
-    border: var(--border-size-1) solid transparent;
-    &:hover {
-      text-decoration: underline;
+    &[data-type='ghost'] {
+      background-color: transparent;
+      border: var(--border-size-1) solid transparent;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 
