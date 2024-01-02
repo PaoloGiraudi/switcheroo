@@ -38,7 +38,7 @@
 <style>
   dialog {
     border-radius: var(--radius-2);
-    box-shadow: var(--shadow-3);
+    box-shadow: var(--shadow-2);
     position: relative;
     padding: 0;
     width: 100%;
