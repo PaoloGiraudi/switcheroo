@@ -57,7 +57,7 @@
 
 <style>
   .layout {
-    height: 100dvh;
+    height: 100svh;
     margin-inline: auto;
     position: relative;
   }
