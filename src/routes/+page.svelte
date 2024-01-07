@@ -40,8 +40,8 @@
   .blob {
     filter: blur(150px);
     z-index: -1;
-    height: 50dvh;
-    width: 50dvw;
+    height: 50svh;
+    width: 50vw;
     right: 0%;
     top: 50%;
     background-image: var(--gradient-25);
@@ -99,8 +99,8 @@
     .blob {
       filter: blur(150px);
       z-index: -1;
-      height: 30dvh;
-      width: 60dvw;
+      height: 30svh;
+      width: 60vw;
       right: 10%;
       top: 25%;
       background-image: var(--blob);
@@ -110,7 +110,7 @@
 
     header {
       flex-grow: 2;
-      height: 70dvh;
+      height: 70svh;
       padding-inline-start: var(--size-fluid-6);
     }
     header > h1 {
