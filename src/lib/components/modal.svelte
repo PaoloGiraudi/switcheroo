@@ -14,7 +14,7 @@
 </script>
 
 <dialog
-  role=""
+  role
   bind:this={dialog}
   on:click={(e) => {
     if (e.target === dialog) {
@@ -42,9 +42,6 @@
     position: relative;
     padding: 0;
     width: 100%;
-  }
-  dialog::backdrop {
-    background: var(--surface-2);
   }
 
   button {
