@@ -14,7 +14,7 @@
 </script>
 
 <dialog
-  role
+  role=""
   bind:this={dialog}
   on:click={(e) => {
     if (e.target === dialog) {
