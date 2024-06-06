@@ -43,9 +43,6 @@
     padding: 0;
     width: 100%;
   }
-  dialog::backdrop {
-    background: var(--surface-2);
-  }
 
   button {
     background-color: var(--surface-1);
