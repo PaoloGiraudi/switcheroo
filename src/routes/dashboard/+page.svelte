@@ -11,11 +11,9 @@
 </div>
 
 {#if data.userId}
-  <div class="add-button">
-    <a href="/dashboard/manage">
-      <Plus />
-    </a>
-  </div>
+  <a href="/dashboard/manage" class="add-button">
+    <Plus />
+  </a>
 {/if}
 
 <style>
@@ -44,7 +42,6 @@
     height: var(--size-fluid-5);
     aspect-ratio: 1;
     background-color: var(--brand);
-    box-shadow: var(--shadow-2);
     border-radius: var(--radius-2);
     &:hover {
       filter: brightness(0.9);

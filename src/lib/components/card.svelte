@@ -32,8 +32,7 @@
       border-radius: var(--radius-2);
       border: var(--border-size-1) solid var(--surface-2);
       padding: var(--size-6);
-      min-width: var(--size-content-3);
-      box-shadow: var(--shadow-2);
+      min-width: var(--size-content-4);
     }
   }
 </style>
