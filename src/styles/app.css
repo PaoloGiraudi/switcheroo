@@ -1,86 +1,32 @@
 @import 'open-props/normalize.min.css';
 
 :root {
+  color-scheme: light dark;
   /* font */
   --font-sans: 'Poppins', sans-serif;
 
-  /* dark */
-  --brand-dark: var(--red-10);
-  --warning-dark: var(--yellow-4);
-  --text-1-dark: var(--gray-1);
-  --text-2-dark: var(--gray-2);
-  --surface-1-dark: var(--gray-9);
-  --surface-2-dark: var(--gray-8);
-  --shadow-strength-dark: 40%;
-  --blob-dark: var(--gradient-1);
-
-  /* light */
-  --brand-light: var(--red-9);
-  --warning-light: var(--orange-4);
-  --text-1-light: var(--gray-13);
-  --text-2-light: var(--gray-10);
-  --surface-1-light: var(--stone-2);
-  --surface-2-light: var(--stone-4);
-  --shadow-strength-light: 1%;
-  --blob-light: var(--gradient-25);
-}
-
-:root {
-  color-scheme: dark;
-
-  --brand: var(--brand-dark);
-  --warning: var(--warning-dark);
-  --text-1: var(--text-1-dark);
-  --text-2: var(--text-2-dark);
-  --surface-1: var(--surface-1-dark);
-  --surface-2: var(--surface-2-dark);
-  --shadow-strength: var(--shadow-strength-dark);
-  --blob: var(--blob-dark);
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color-scheme: light;
-
-    --brand: var(--brand-light);
-    --warning: var(--warning-light);
-    --text-1: var(--text-1-light);
-    --text-2: var(--text-2-light);
-    --surface-1: var(--surface-1-light);
-    --surface-2: var(--surface-2-light);
-    --shadow-strength: var(--shadow-strength-light);
-    --blob: var(--blob-light);
-  }
+  --brand: light-dark(var(--red-9), var(--red-10));
+  --warning: light-dark(var(--yellow-4), var(--orange-4));
+  --text-1: light-dark(var(--gray-12), var(--gray-1));
+  --text-2: light-dark(var(--gray-10), var(--gray-2));
+  --surface-1: light-dark(var(--stone-2), var(--gray-9));
+  --surface-2: light-dark(var(--stone-4), var(--gray-8));
+  --shadow-strength: light-dark(1%, 40%);
+  --blob: light-dark(var(--gradient-25), var(--gradient-1));
 }
 
 [color-scheme='dark'] {
   color-scheme: dark;
-
-  --brand: var(--brand-dark);
-  --warning: var(--warning-dark);
-  --text-1: var(--text-1-dark);
-  --text-2: var(--text-2-dark);
-  --surface-1: var(--surface-1-dark);
-  --surface-2: var(--surface-2-dark);
-  --shadow-strength: var(--shadow-strength-dark);
-  --blob: var(--blob-dark);
 }
 
 [color-scheme='light'] {
   color-scheme: light;
-
-  --brand: var(--brand-light);
-  --warning: var(--warning-light);
-  --text-1: var(--text-1-light);
-  --text-2: var(--text-2-light);
-  --surface-1: var(--surface-1-light);
-  --surface-2: var(--surface-2-light);
-  --shadow-strength: var(--shadow-strength-light);
-  --blob: var(--blob-light);
 }
 
 html {
   --font-size-9: 4rem;
+  --size-content-4: 70ch;
+
   color: var(--text-1);
   accent-color: var(--brand);
   background-color: var(--surface-1);

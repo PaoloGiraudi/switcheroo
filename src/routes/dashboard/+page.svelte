@@ -11,11 +11,9 @@
 </div>
 
 {#if data.userId}
-  <div class="add-button">
-    <a href="/dashboard/manage">
-      <Plus />
-    </a>
-  </div>
+  <a href="/dashboard/manage" class="add-button">
+    <Plus />
+  </a>
 {/if}
 
 <style>
