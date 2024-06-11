@@ -11,16 +11,29 @@
   --text-2: light-dark(var(--gray-10), var(--gray-2));
   --surface-1: light-dark(var(--stone-2), var(--gray-9));
   --surface-2: light-dark(var(--stone-4), var(--gray-8));
-  --shadow-strength: light-dark(1%, 40%);
-  --blob: light-dark(var(--gradient-25), var(--gradient-1));
+
+  --blob-light: var(--gradient-25);
+  --blob-dark: var(--gradient-1);
+}
+
+:root {
+  --blob: var(--blob-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --blob: var(--blob-dark);
+  }
 }
 
 [color-scheme='dark'] {
   color-scheme: dark;
+  --blob: var(--blob-dark);
 }
 
 [color-scheme='light'] {
   color-scheme: light;
+  --blob: var(--blob-light);
 }
 
 html {

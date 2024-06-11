@@ -78,7 +78,6 @@
       place-items: center;
       height: var(--size-8);
       background-color: var(--brand);
-      box-shadow: var(--shadow-2);
       border-radius: var(--radius-2);
       text-decoration: none;
       font-weight: 500;

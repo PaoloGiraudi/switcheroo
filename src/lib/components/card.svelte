@@ -33,7 +33,6 @@
       border: var(--border-size-1) solid var(--surface-2);
       padding: var(--size-6);
       min-width: var(--size-content-4);
-      box-shadow: var(--shadow-2);
     }
   }
 </style>

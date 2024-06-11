@@ -42,7 +42,6 @@
     height: var(--size-fluid-5);
     aspect-ratio: 1;
     background-color: var(--brand);
-    box-shadow: var(--shadow-2);
     border-radius: var(--radius-2);
     &:hover {
       filter: brightness(0.9);
