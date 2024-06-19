@@ -9,5 +9,4 @@ export { default as Login } from './login.svelte';
 export { default as Navbar } from './navbar.svelte';
 export { default as Select } from './select.svelte';
 export { default as ThemeSwitch } from './theme-switch.svelte';
-export { default as TryItOut } from './try-it-out.svelte';
 export { default as Modal } from './modal.svelte';
