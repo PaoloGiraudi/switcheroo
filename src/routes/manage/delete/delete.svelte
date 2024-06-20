@@ -1,6 +1,6 @@
 <script lang="ts">
   import { db } from '$lib/db';
-  import { capitalize } from '$lib/helpers/formatters';
+  import { capitalize } from '$lib/formatters';
   import Trash from '$lib/icons/trash.svelte';
   import { liveQuery } from 'dexie';
   import { deleteSchema } from './schema';
@@ -23,7 +23,7 @@
     try {
       await db.conversions.delete(form.data.id);
     } catch (error) {
-      console.log('error', error);
+      message: 'An unknown error occurred';
     }
   }
 </script>

@@ -1,17 +1,16 @@
 <script lang="ts">
   import { Card, Message, Select } from '$lib/components';
-  import { toCamelCase, unwrap } from '$lib/helpers/formatters';
+  import { toCamelCase, unwrap } from '$lib/formatters';
   import { addSchema } from './schema';
   import { db } from '$lib/db';
   import { goto } from '$app/navigation';
-  import { loadConvertUnits } from '$lib/helpers/convert-units.svelte';
-  import Form from '$lib/components/form/form.svelte';
+  import { createConvertUnits } from '$lib/create-convert-units.svelte';
 
   let category: string | null = $state(null);
   let left: string | null = $state(null);
   let right: string | null = $state(null);
 
-  const { measures, options } = loadConvertUnits();
+  const { measures, options } = createConvertUnits();
 
   const units = $derived(category ? options.get(category) : []);
 
@@ -56,7 +55,7 @@
       }
       goto('/');
     } catch (error) {
-      console.log('error', error);
+      message: 'An unknown error occurred';
     }
   }
 </script>
@@ -89,7 +88,7 @@
         object
       />
     </div>
-    <button type="submit" disabled={!category || !left || !right}>Add</button>
+    <button type="submit" disabled={!category || !left || !right}>Add conversion</button>
   </form>
   {#if message}
     <Message {message} />
@@ -127,7 +126,6 @@
     gap: var(--size-2);
     font-size: var(--font-size-2);
     font-weight: 500;
-    filter: invert(1);
 
     &:hover {
       filter: brightness(0.9);

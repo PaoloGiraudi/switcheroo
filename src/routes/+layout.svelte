@@ -3,6 +3,7 @@
   import '@fontsource/poppins/latin-500.css';
   import '../styles/reset.css';
   import '../styles/app.css';
+  import Navbar from '$lib/components/navbar.svelte';
 </script>
 
 <svelte:head>
@@ -11,6 +12,7 @@
 </svelte:head>
 
 <div class="layout">
+  <Navbar />
   <main>
     <slot />
   </main>

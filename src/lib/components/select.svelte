@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { capitalize, unwrap } from '$lib/helpers/formatters';
-  import Field from './form/field.svelte';
+  import { capitalize, unwrap } from '$lib/formatters';
+  import Field from './field.svelte';
   export let placeholder: string | undefined = '---';
   export let label: string;
   export let name: 'left' | 'right' | 'category';

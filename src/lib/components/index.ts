@@ -1,12 +1,9 @@
 export { default as Card } from './card.svelte';
-export { default as Form } from './form/form.svelte';
-export { default as Field } from './form/field.svelte';
-export { default as Message } from './form/message.svelte';
+export { default as Field } from './field.svelte';
+export { default as Message } from './message.svelte';
 export { default as ConversionField } from './conversion-field.svelte';
 export { default as Info } from './info.svelte';
 export { default as Input } from './input.svelte';
-export { default as Login } from './login.svelte';
 export { default as Navbar } from './navbar.svelte';
 export { default as Select } from './select.svelte';
 export { default as ThemeSwitch } from './theme-switch.svelte';
-export { default as Modal } from './modal.svelte';

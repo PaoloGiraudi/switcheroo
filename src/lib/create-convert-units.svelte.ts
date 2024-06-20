@@ -1,7 +1,7 @@
 import configMeasurements from 'convert-units';
 import allMeasures from 'convert-units/definitions/all';
 
-export function loadConvertUnits() {
+export function createConvertUnits() {
   const convertUnits = $state(configMeasurements(allMeasures));
   const options = new Map();
   const measures = convertUnits().measures();

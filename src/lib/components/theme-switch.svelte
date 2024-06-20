@@ -1,16 +1,29 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
   import Sun from '$lib/icons/sun.svelte';
   import Moon from '$lib/icons/moon.svelte';
-  import { setTheme, theme } from '$lib/stores/theme';
-  onMount(() => document.documentElement.setAttribute('color-scheme', $theme));
-</script>
+  import { browser } from '$app/environment';
+  type Theme = 'light' | 'dark';
 
-<button aria-label="Switch theme" on:click={() => setTheme($theme === 'light' ? 'dark' : 'light')}>
-  {#if $theme === 'dark'}
+  onMount(() => document.documentElement.setAttribute('color-scheme', theme));
+
+  const prefersDarkMode = browser && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const userTheme = browser && localStorage.getItem('color-scheme');
+
+  let theme:Theme = $state(userTheme ? userTheme : prefersDarkMode ? 'dark' : 'light');
+
+  function setTheme(value: Theme) {
+    theme = value;
+    document.documentElement.setAttribute('color-scheme', value);
+    localStorage.setItem('color-scheme', value);
+  }
+</script >
+
+<button aria-label="Switch theme" onclick={() => setTheme(theme === 'light' ? 'dark' : 'light')}>
+  {#if theme === 'dark'}
     <Sun />
   {/if}
-  {#if $theme === 'light'}
+  {#if theme === 'light'}
     <Moon />
   {/if}
 </button>

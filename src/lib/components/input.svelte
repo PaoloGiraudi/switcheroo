@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { capitalize } from '$lib/helpers/formatters';
+  import { capitalize } from '$lib/formatters';
 
   export let name: string;
   export let value: number | null;

@@ -4,9 +4,9 @@
   import { db } from '$lib/db';
   import { liveQuery } from 'dexie';
   import type { Def } from '$lib/types';
-  import { loadConvertUnits } from '$lib/helpers/convert-units.svelte';
+  import { createConvertUnits } from '$lib/create-convert-units.svelte';
 
-  const { convertUnits: c } = loadConvertUnits();
+  const { convertUnits: c } = createConvertUnits();
   const userConversions = liveQuery(() => db.conversions.toArray());
   const conversions = new Map<string, Def>();
 
