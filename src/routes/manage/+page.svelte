@@ -1,12 +1,11 @@
 <script lang="ts">
   import Add from './add/add.svelte';
   import Delete from './delete/delete.svelte';
-  export let data;
 </script>
 
 <section>
   <Add />
-  <Delete userConversions={data.userToConversions || []} />
+  <Delete />
 </section>
 
 <style>

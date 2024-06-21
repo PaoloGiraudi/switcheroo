@@ -1,4 +1,4 @@
-import { Category, Measures, MeasuresMap } from '$lib/server/validators';
+import { Category, Measures, MeasuresMap } from '$lib/validators';
 import { z } from 'zod';
 
 export const addSchema = z
