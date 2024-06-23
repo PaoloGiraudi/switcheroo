@@ -17,6 +17,7 @@
 
 <style>
   nav {
+    background-color: var(--surface-1);
     padding: var(--size-2);
     position: sticky;
     top: 0;
