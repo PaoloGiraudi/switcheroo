@@ -62,6 +62,7 @@
     font-size: var(--font-size-3);
   }
   h2 {
+    font-weight: 500;
     font-size: var(--font-size-4);
   }
   button {

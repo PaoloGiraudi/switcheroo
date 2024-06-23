@@ -5,38 +5,36 @@
 </script>
 
 <nav>
-  <a href="/">
-    {#if $page.route.id !== '/' && $page.route.id !== '/dashboard'}
+  {#if $page.route.id !== '/'}
+    <a href="/">
       <Back />
-    {:else}
-      Switcheroo
-    {/if}
-  </a>
-  <div class="right">
-    <ThemeSwitch />
-  </div>
+    </a>
+  {:else}
+    <a href="info">Switcheroo</a>
+  {/if}
+  <ThemeSwitch />
 </nav>
 
 <style>
-  a:hover {
-    text-decoration: none;
-  }
   nav {
-    z-index: var(--layer-important);
     padding: var(--size-2);
-    padding-inline-start: var(--size-6);
     position: sticky;
     top: 0;
-    background-color: var(--surface-1);
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: var(--border-size-1) solid var(--surface-2);
+
+    @media (min-width: 50rem) {
+      padding-inline: var(--size-3);
+    }
   }
 
-  .right {
-    align-items: center;
-    display: flex;
-    gap: var(--size-3);
+  a {
+    color: var(--text-1);
+    padding-inline-start: var(--size-1);
+    &:hover {
+      text-decoration-color: var(--text-1);
+    }
   }
 </style>

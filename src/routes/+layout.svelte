@@ -39,6 +39,7 @@
     main {
       height: 100%;
       padding-block-start: var(--size-6);
+      padding-inline: var(--size-6);
       display: flex;
       align-items: center;
     }

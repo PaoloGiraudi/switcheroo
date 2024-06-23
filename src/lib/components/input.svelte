@@ -7,7 +7,7 @@
 
 <div>
   <label for={name}>{capitalize(name)}</label>
-  <input {name} {value} id={name} inputmode="numeric" min="0" type="number" on:input />
+  <input {name} {value} id={name} inputmode="decimal" min="0" type="number" on:input />
 </div>
 
 <style>
@@ -21,23 +21,31 @@
 
   input {
     caret-color: var(--text-2);
-    height: var(--size-fluid-5);
-    font-size: var(--font-size-fluid-3);
-    padding-inline-start: var(--size-fluid-1);
+    font-size: var(--font-size-5);
+    padding-inline-start: var(--size-2);
     background-color: var(--surface-1);
     border-bottom: var(--border-size-2) solid transparent;
     border-radius: 0;
+
+    @media (min-width: 50rem) {
+      font-size: var(--font-size-8);
+    }
   }
   input:focus,
   input:focus-visible {
     border-bottom-color: var(--brand);
     outline-style: none;
   }
+
   label {
     color: var(--text-1);
     font-weight: 400;
-    font-size: var(--font-size-fluid-1);
-    padding-inline-start: var(--size-fluid-1);
+    font-size: var(--font-size-1);
+    padding-inline-start: var(--size-2);
+
+    @media (min-width: 50rem) {
+      font-size: var(--font-size-4);
+    }
   }
 
   input[type='number']::-webkit-inner-spin-button,

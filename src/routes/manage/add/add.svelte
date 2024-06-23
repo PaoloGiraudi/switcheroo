@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Card, Message, Select } from '$lib/components';
+  import { Message, Select } from '$lib/components';
   import { toCamelCase, unwrap } from '$lib/formatters';
   import { addSchema } from './schema';
   import { db } from '$lib/db';
@@ -60,7 +60,8 @@
   }
 </script>
 
-<Card title="Add a new conversion">
+<div class="add">
+  <h1>Add a new conversion</h1>
   <form on:submit|preventDefault={onAdd}>
     <div class="add-fields">
       <Select
@@ -93,9 +94,22 @@
   {#if message}
     <Message {message} />
   {/if}
-</Card>
+</div>
 
 <style>
+  .add {
+    background-color: var(--surface-1);
+    display: flex;
+    flex-direction: column;
+    padding: var(--size-4);
+    gap: var(--size-4);
+  }
+
+  h1 {
+    font-weight: 500;
+    font-size: var(--font-size-4);
+  }
+
   .add-fields {
     display: flex;
     gap: var(--size-4);
@@ -139,6 +153,13 @@
   }
 
   @media (min-width: 50rem) {
+    .add {
+      border-radius: var(--radius-2);
+      border: var(--border-size-1) solid var(--surface-2);
+      padding: var(--size-6);
+      min-width: var(--size-content-4);
+    }
+
     .add-fields {
       display: grid;
       grid-template-columns: 1fr 1fr;
