@@ -9,7 +9,8 @@
   let message = $state('');
 
   async function onDelete(e: SubmitEvent) {
-    const formData = new FormData(e.target);
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
 
     const form = deleteSchema.safeParse({
       id: Number(formData.get('id'))
@@ -32,7 +33,7 @@
   <h2>Your dashboard</h2>
   {#if $userConversions}
     {#each $userConversions as conversions}
-      <form on:submit|preventDefault={onDelete}>
+      <form onsubmit={onDelete}>
         <input type="hidden" name="id" id="id" value={conversions.id} />
         <span>{`${capitalize(conversions.left)} → ${capitalize(conversions.right)}`}</span>
         <button type="submit">

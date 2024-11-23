@@ -17,7 +17,8 @@
   let message = $state('');
 
   async function onAdd(e: SubmitEvent) {
-    const formData = new FormData(e.target);
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
 
     const form = addSchema.safeParse({
       category: formData.get('category'),
@@ -62,7 +63,7 @@
 
 <div class="add">
   <h1>Add a new conversion</h1>
-  <form on:submit|preventDefault={onAdd}>
+  <form onsubmit={onAdd}>
     <div class="add-fields">
       <Select
         on:change={() => (left = right = null)}
